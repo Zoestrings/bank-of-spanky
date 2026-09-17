@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bank of Spanky Community — join us on Discord, Twitter/X, and Telegram. One vault, three channels.">
+    <title>Community — Bank of Spanky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spanky.css">
+    <style>
+        /* PAGE HERO */
+        .page-hero {
+            padding: 80px 0 70px;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .page-hero .eyebrow {
+            font-size: 0.82rem;
+            letter-spacing: 0.18em;
+            color: var(--warm-grey);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+        .page-hero .sub {
+            color: var(--ink-soft);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 52ch;
+        }
+
+        /* PLATFORM CARDS — three full-bleed panels */
+        .platforms-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border-top: 1px solid var(--line);
+            margin-top: 48px;
+        }
+        @media (min-width: 760px) {
+            .platform-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .platform-card {
+            padding: 56px 36px 56px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        @media (min-width: 760px) {
+            .platform-card {
+                border-right: 1px solid var(--line);
+                border-bottom: none;
+                padding: 56px 40px;
+            }
+            .platform-card:last-child { border-right: none; }
+        }
+        .platform-wordmark {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            margin-bottom: 24px;
+            font-family: 'Inter', sans-serif;
+        }
+        .platform-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            flex-shrink: 0;
+        }
+        .platform-name {
+            font-size: 1.7rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            margin-bottom: 16px;
+            font-family: 'Georgia', serif;
+        }
+        .platform-desc {
+            color: var(--ink-soft);
+            font-size: 0.96rem;
+            line-height: 1.8;
+            flex: 1;
+            margin-bottom: 32px;
+        }
+        .platform-perks {
+            list-style: none;
+            margin-bottom: 36px;
+            border-top: 1px solid var(--line);
+        }
+        .platform-perks li {
+            padding: 10px 0;
+            font-size: 0.88rem;
+            color: var(--ink-soft);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .perk-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--warm-grey);
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        .platform-join-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: var(--paper);
+            transition: background 0.2s ease, color 0.2s ease;
+            align-self: flex-start;
+            text-decoration: none;
+        }
+        .platform-join-btn:hover {
+            background: var(--ivory);
+            color: var(--ink);
+        }
+        .platform-join-btn.outline {
+            background: transparent;
+            color: var(--ink);
+        }
+        .platform-join-btn.outline:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        /* COMMUNITY STATS */
+        .stats-section {
+            border-bottom: 1px solid var(--line);
+            background: var(--ivory);
+        }
+        .stats-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 700px) {
+            .stats-inner { grid-template-columns: repeat(4, 1fr); }
+        }
+        .stat-block {
+            padding: 40px 28px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            text-align: center;
+        }
+        @media (min-width: 700px) { .stat-block { border-bottom: none; } }
+        .stat-block:nth-child(2n) { border-right: none; }
+        @media (min-width: 700px) {
+            .stat-block:nth-child(2n) { border-right: 1px solid var(--line); }
+            .stat-block:last-child { border-right: none; }
+        }
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.76rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+        }
+
+        /* RULES */
+        .rules-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-top: 48px;
+            border-top: 1px solid var(--line);
+        }
+        @media (min-width: 700px) { .rules-grid { grid-template-columns: repeat(2, 1fr); } }
+        .rule-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        @media (min-width: 700px) {
+            .rule-item { padding: 28px 36px 28px 0; border-right: 1px solid var(--line); }
+            .rule-item:nth-child(even) { border-right: none; padding-left: 36px; padding-right: 0; }
+        }
+        .rule-num {
+            font-size: 1.4rem;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+            color: var(--line);
+            flex-shrink: 0;
+            line-height: 1;
+            padding-top: 3px;
+        }
+        .rule-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
+        .rule-content p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; }
+
+        /* FOOTER CTA */
+        .cta-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .cta-box {
+            border: 1px solid var(--ink);
+            padding: 64px 48px;
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .cta-box h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .cta-box p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 36px;
+            max-width: 44ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .safety-note {
+            margin-top: 22px;
+            font-size: 0.8rem;
+            color: var(--warm-grey);
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mobile-menu-inner">
+            <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&#10005;</button>
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <a href="claim.html" class="mobile-nav-link">Claim</a>
+                <a href="access.html" class="mobile-nav-link">Access</a>
+                <a href="blueprint.html" class="mobile-nav-link">Blueprint</a>
+                <a href="merch.html" class="mobile-nav-link">Merch Drop</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener" class="mobile-nav-link">Store</a>
+                <a href="community.html" class="mobile-nav-link">Community</a>
+            </nav>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="navlinks">
+                <a href="claim.html">Claim</a>
+                <a href="access.html">Access</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="merch.html">Merch Drop</a>
+                <a href="whitepaper/">Whitepaper</a>
+            </div>
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="navicons">
+                    <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="pink-rule"></div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <div class="wrap">
+            <div class="eyebrow">Join the Movement</div>
+            <h1>The Spanky<br>Community</h1>
+            <p class="sub">One vault, three channels. Whether you're here for alpha, updates, or just the vibe — pick your platform, join the family, and never miss a drop.</p>
+        </div>
+    </div>
+
+    <!-- COMMUNITY STATS -->
+    <div class="stats-section">
+        <div class="wrap">
+            <div class="stats-inner">
+                <div class="stat-block">
+                    <span class="stat-num">3</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num">333</span>
+                    <span class="stat-label">Max Holders</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-label">Always Active</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num">Sep 24</span>
+                    <span class="stat-label">Launch Date</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THREE PLATFORMS -->
+    <section class="platforms-section">
+        <div class="wrap">
+            <div class="section-eyebrow">Choose Your Channel</div>
+            <div class="section-head">
+                <h2>One Community,<br>Three Platforms</h2>
+                <p>Every platform serves a different part of the Spanky ecosystem. We recommend joining all three.</p>
+            </div>
+            <div class="platform-grid">
+
+                <!-- DISCORD -->
+                <div class="platform-card">
+                    <div class="platform-wordmark">Voice &amp; Community</div>
+                    <div class="platform-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="#171717"/>
+                        </svg>
+                    </div>
+                    <div class="platform-name">Discord</div>
+                    <p class="platform-desc">The main vault. Token-gated channels, live voice rooms, community voting, and holder-only alpha. The deepest layer of the Spanky ecosystem — all in one server.</p>
+                    <ul class="platform-perks">
+                        <li><span class="perk-dot"></span>Token-gated holder channels</li>
+                        <li><span class="perk-dot"></span>Real-time announcements &amp; drops</li>
+                        <li><span class="perk-dot"></span>VIP voice rooms with Spanky</li>
+                        <li><span class="perk-dot"></span>Governance voting &amp; proposals</li>
+                        <li><span class="perk-dot"></span>Spanky School alpha network</li>
+                    </ul>
+                    <a href="#" class="platform-join-btn" onclick="alert('Discord invite link goes live September 24th at mint launch.')">
+                        Join Discord
+                    </a>
+                </div>
+
+                <!-- TWITTER / X -->
+                <div class="platform-card">
+                    <div class="platform-wordmark">Updates &amp; Culture</div>
+                    <div class="platform-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#171717"/>
+                        </svg>
+                    </div>
+                    <div class="platform-name">X (Twitter)</div>
+                    <p class="platform-desc">Everything public. New drops, mint announcements, culture, memes, and real-time Spanky energy — all on X. Follow for daily content and be the first to know.</p>
+                    <ul class="platform-perks">
+                        <li><span class="perk-dot"></span>Drop announcements &amp; countdowns</li>
+                        <li><span class="perk-dot"></span>Daily Spanky content &amp; memes</li>
+                        <li><span class="perk-dot"></span>Giveaways &amp; community events</li>
+                        <li><span class="perk-dot"></span>Behind-the-scenes content</li>
+                        <li><span class="perk-dot"></span>Real cash reward posts</li>
+                    </ul>
+                    <a href="#" class="platform-join-btn outline" onclick="alert('Official X/Twitter link coming at launch.')">
+                        Follow on X
+                    </a>
+                </div>
+
+                <!-- TELEGRAM -->
+                <div class="platform-card">
+                    <div class="platform-wordmark">Fast Intel &amp; Alerts</div>
+                    <div class="platform-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="#171717"/>
+                        </svg>
+                    </div>
+                    <div class="platform-name">Telegram</div>
+                    <p class="platform-desc">Fast-moving, no noise. Spanky's Telegram hub is for quick alerts, insider signals, and time-sensitive calls. If you want to stay ahead of every move — this is the channel.</p>
+                    <ul class="platform-perks">
+                        <li><span class="perk-dot"></span>Instant drop &amp; mint alerts</li>
+                        <li><span class="perk-dot"></span>$SPANKY token calls &amp; signals</li>
+                        <li><span class="perk-dot"></span>Holder-only VIP Telegram hub</li>
+                        <li><span class="perk-dot"></span>Direct team broadcasts</li>
+                        <li><span class="perk-dot"></span>Flash sale &amp; whitelist notices</li>
+                    </ul>
+                    <a href="#" class="platform-join-btn outline" onclick="alert('Official Telegram link coming at launch.')">
+                        Join Telegram
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY RULES -->
+    <section class="rules-section">
+        <div class="wrap">
+            <div class="section-eyebrow">Community Standards</div>
+            <div class="section-head">
+                <h2>The Code of the Vault</h2>
+                <p>These rules apply across all three platforms. Break them and your access gets revoked — permanently.</p>
+            </div>
+            <div class="rules-grid">
+                <div class="rule-item">
+                    <div class="rule-num">01</div>
+                    <div class="rule-content">
+                        <h4>No Unofficial Links</h4>
+                        <p>Never share or click links from unverified sources. All official links come only from verified admin accounts or this website.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-num">02</div>
+                    <div class="rule-content">
+                        <h4>Never Share Your Seed Phrase</h4>
+                        <p>No admin, mod, or team member will ever ask for your wallet seed phrase. Anyone who does is a scammer — report immediately.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-num">03</div>
+                    <div class="rule-content">
+                        <h4>Respect All Members</h4>
+                        <p>Keep it respectful and constructive across all platforms. Hate speech, harassment, or discrimination results in an instant permanent ban.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-num">04</div>
+                    <div class="rule-content">
+                        <h4>No Unsolicited Promotion</h4>
+                        <p>Shilling other projects without admin approval is not permitted in any channel. Use the designated spaces with permission only.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-num">05</div>
+                    <div class="rule-content">
+                        <h4>Keep Holder Alpha Private</h4>
+                        <p>Information shared in gated channels stays in gated channels. Leaking holder-only content results in permanent access removal.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-num">06</div>
+                    <div class="rule-content">
+                        <h4>When In Doubt, Ask</h4>
+                        <p>If something feels off — a link, a DM, an offer — post in #support before acting. The team responds fast. Better safe than rugged.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="cta-section">
+        <div class="wrap">
+            <div class="cta-box">
+                <h2>Join All Three Platforms</h2>
+                <p>Discord for depth, X for culture, Telegram for speed. The full Spanky experience lives across all three.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="alert('Discord opens September 24th.')">Join Discord</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('X/Twitter link coming soon.')">Follow on X</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Telegram link coming soon.')">Telegram</a>
+                </div>
+                <p class="safety-note">⚠️ Only join through this official page. Never from a DM or unverified link.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="claim.html">Claim</a>
+                <a href="merch.html">Merch Drop</a>
+                <a href="whitepaper/">Whitepaper</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="access.html">Access</a>
+                <a href="community.html">Community</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+            </div>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        function openMenu() { mobileMenu.classList.add('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+        hamburgerBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+        mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    </script>
+
+</body>
+</html>

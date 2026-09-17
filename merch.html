@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bank of Spanky Merch Drop — OG apparel, the 333 NFT collection, $SPANKY coin, and real cash rewards.">
+    <title>Merch Drop — Bank of Spanky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spanky.css">
+    <style>
+        /* PAGE HERO */
+        .page-hero {
+            padding: 80px 0 70px;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .page-hero .eyebrow {
+            font-size: 0.82rem;
+            letter-spacing: 0.18em;
+            color: var(--warm-grey);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+        .page-hero .sub {
+            color: var(--ink-soft);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 52ch;
+        }
+
+        /* FEATURED DROPS GRID */
+        .drops-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .drops-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border-top: 1px solid var(--line);
+            margin-top: 48px;
+        }
+        @media (min-width: 760px) {
+            .drops-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1000px) {
+            .drops-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .drop-card {
+            border-bottom: 1px solid var(--line);
+            background: var(--ivory);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .drop-card:hover { background: var(--paper); }
+        @media (min-width: 760px) {
+            .drop-card {
+                border-right: 1px solid var(--line);
+            }
+            .drop-card:nth-child(2n) { border-right: none; }
+        }
+        @media (min-width: 1000px) {
+            .drop-card:nth-child(2n) { border-right: 1px solid var(--line); }
+            .drop-card:last-child { border-right: none; }
+        }
+        .drop-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-bottom: 1px solid var(--line);
+            display: block;
+        }
+        .drop-body {
+            padding: 22px 24px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .drop-tag {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            margin-bottom: 10px;
+        }
+        .drop-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .drop-desc {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .drop-cta {
+            display: inline-block;
+            font-size: 0.82rem;
+            letter-spacing: 0.09em;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 3px;
+            color: var(--ink);
+            transition: opacity 0.2s ease;
+            align-self: flex-start;
+        }
+        .drop-cta:hover { opacity: 0.65; }
+
+        /* NFT COLLECTION FEATURE */
+        .collection-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .collection-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        @media (min-width: 900px) {
+            .collection-inner { grid-template-columns: 1fr 1fr; }
+        }
+        .coll-img-wrap {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: var(--ivory);
+            border: 1px solid var(--line);
+            overflow: hidden;
+        }
+        .coll-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .coll-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--paper);
+            border: 1px solid var(--ink);
+            font-size: 0.76rem;
+            letter-spacing: 0.06em;
+            padding: 5px 10px;
+        }
+        .coll-content .section-eyebrow { margin-bottom: 16px; }
+        .coll-content h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+        .coll-content p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+        .coll-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid var(--line);
+            margin: 32px 0;
+        }
+        .coll-stat {
+            padding: 20px 18px;
+            border-right: 1px solid var(--line);
+            text-align: center;
+        }
+        .coll-stat:last-child { border-right: none; }
+        .coll-stat-num {
+            font-size: 1.6rem;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .coll-stat-label {
+            font-size: 0.76rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+        }
+
+        /* COIN SECTION */
+        .coin-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .coin-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        @media (min-width: 760px) {
+            .coin-inner { grid-template-columns: repeat(2, 1fr); }
+        }
+        .coin-card {
+            border: 1px solid var(--line);
+            padding: 40px 36px;
+        }
+        .coin-icon {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+        .coin-card h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+        .coin-card p {
+            color: var(--ink-soft);
+            font-size: 0.96rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* REAL CASH SECTION */
+        .cash-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .cash-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border-top: 1px solid var(--line);
+            margin-top: 48px;
+        }
+        @media (min-width: 700px) {
+            .cash-steps { grid-template-columns: repeat(3, 1fr); }
+        }
+        .cash-step {
+            padding: 40px 28px 40px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        @media (min-width: 700px) {
+            .cash-step {
+                border-right: 1px solid var(--line);
+                border-bottom: none;
+                padding: 40px 28px;
+            }
+            .cash-step:last-child { border-right: none; }
+        }
+        .cash-step .num {
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            color: var(--warm-grey);
+            margin-bottom: 14px;
+        }
+        .cash-step h4 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .cash-step p {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mobile-menu-inner">
+            <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&#10005;</button>
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <a href="claim.html" class="mobile-nav-link">Claim</a>
+                <a href="access.html" class="mobile-nav-link">Access</a>
+                <a href="blueprint.html" class="mobile-nav-link">Blueprint</a>
+                <a href="merch.html" class="mobile-nav-link">Merch Drop</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener" class="mobile-nav-link">Store</a>
+                <a href="community.html" class="mobile-nav-link">Community</a>
+            </nav>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="navlinks">
+                <a href="claim.html">Claim</a>
+                <a href="access.html">Access</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="merch.html">Merch Drop</a>
+                <a href="whitepaper/">Whitepaper</a>
+            </div>
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="navicons">
+                    <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="pink-rule"></div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <div class="wrap">
+            <div class="eyebrow">From the Original Site</div>
+            <h1>OG Merch, Collection<br>&amp; Coin</h1>
+            <p class="sub">Four original entry points into the Bank of Spanky ecosystem — real drip, on-chain collectibles, the $SPANKY token, and a cash rewards programme built for real degens.</p>
+        </div>
+    </div>
+
+    <!-- DROP TILES -->
+    <section class="drops-section">
+        <div class="wrap">
+            <div class="section-eyebrow">All Drops</div>
+            <div class="section-head">
+                <h2>Choose Your Entry Point</h2>
+                <p>Every path leads into the vault. Pick the one that fits your degen style.</p>
+            </div>
+            <div class="drops-grid">
+                <div class="drop-card">
+                    <img class="drop-img" src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/tab02.png" alt="OG Merch">
+                    <div class="drop-body">
+                        <div class="drop-tag">Apparel &amp; Accessories</div>
+                        <div class="drop-title">OG Merch</div>
+                        <p class="drop-desc">Drip hard. Stay Spanky. Official apparel for the real degens — every item ships with a free NFT claim tag.</p>
+                        <a class="drop-cta" href="https://ogspanky.com" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="drop-card">
+                    <img class="drop-img" src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/tab01.png" alt="OG Collection">
+                    <div class="drop-body">
+                        <div class="drop-tag">333 NFTs on Solana</div>
+                        <div class="drop-title">OG Collection</div>
+                        <p class="drop-desc">A 333-piece NFT collection living permanently on the Solana blockchain. Each token unlocks holder tiers and community access.</p>
+                        <a class="drop-cta" href="#">View Collection</a>
+                    </div>
+                </div>
+                <div class="drop-card">
+                    <img class="drop-img" src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/tab04.png" alt="$SPANKY Coin">
+                    <div class="drop-body">
+                        <div class="drop-tag">Memecoin</div>
+                        <div class="drop-title">$SPANKY Coin</div>
+                        <p class="drop-desc">Get early access to Spanky World's hottest token. Liquidity seeded by mint revenue. Holders get priority allocation before public listing.</p>
+                        <a class="drop-cta" href="#">Join $DNC</a>
+                    </div>
+                </div>
+                <div class="drop-card">
+                    <img class="drop-img" src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/tab03.png" alt="Real Cash Rewards">
+                    <div class="drop-body">
+                        <div class="drop-tag">Community Rewards</div>
+                        <div class="drop-title">Real Cash</div>
+                        <p class="drop-desc">Get rewarded in real cash for every word you put out about Spanky. Post, share, shill — and get paid. No middlemen.</p>
+                        <a class="drop-cta" href="#">Claim Cash</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION FEATURE -->
+    <section class="collection-section">
+        <div class="wrap">
+            <div class="collection-inner">
+                <div class="coll-img-wrap">
+                    <div class="coll-badge">Legendary Vault Keeper</div>
+                    <img src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/WELCOME.png" alt="Bank of Spanky NFT art">
+                </div>
+                <div class="coll-content">
+                    <div class="section-eyebrow">NFT Collection</div>
+                    <h2>333 Pieces.<br>One Vault.</h2>
+                    <p>The Bank of Spanky OG Collection is a 333-piece NFT collection minted on the Solana blockchain. From Common Holders to Legendary Vault Keepers, every piece carries utility, identity, and access.</p>
+                    <p>Rarity tiers determine your community access level, merch whitelist priority, and $SPANKY token allocation. The collection drops on GraveMint on September 24th, 2026.</p>
+                    <div class="coll-stats">
+                        <div class="coll-stat">
+                            <span class="coll-stat-num">333</span>
+                            <span class="coll-stat-label">Total Supply</span>
+                        </div>
+                        <div class="coll-stat">
+                            <span class="coll-stat-num">5</span>
+                            <span class="coll-stat-label">Rarity Tiers</span>
+                        </div>
+                        <div class="coll-stat">
+                            <span class="coll-stat-num">0◎</span>
+                            <span class="coll-stat-label">Merch Mint Fee</span>
+                        </div>
+                    </div>
+                    <div class="cta-row">
+                        <button class="btn btn-primary" onclick="alert('Mint portal opens September 24th.')">Mint on GraveMint</button>
+                        <a href="claim.html" class="btn btn-secondary">Claim with Merch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COIN + CASH -->
+    <section class="coin-section">
+        <div class="wrap">
+            <div class="section-eyebrow">Token &amp; Rewards</div>
+            <div class="section-head">
+                <h2>$SPANKY &amp; Real Cash</h2>
+                <p>The two ways the community earns alongside the brand.</p>
+            </div>
+            <div class="coin-inner">
+                <div class="coin-card">
+                    <div class="coin-icon">🪙</div>
+                    <h3>$SPANKY Token</h3>
+                    <p>The Bank of Spanky memecoin is liquidity-paired using mint revenue from the genesis collection. NFT holders receive a proportional $SPANKY allocation at launch, giving them skin in the game from day one.</p>
+                    <p>Priority access to the $DNC community unlocks early buying windows before public listing. Trade it, hold it, or use it within the Spanky ecosystem.</p>
+                    <a href="#" class="text-link" style="padding:0 0 3px;">Join $DNC Early Access</a>
+                </div>
+                <div class="coin-card">
+                    <div class="coin-icon">💵</div>
+                    <h3>Real Cash Rewards</h3>
+                    <p>Spanky's referral and ambassador programme pays real money for real promotion. Every clip, post, share, or shill that drives verified traffic earns you a cut. No vague "points" — actual cash payouts.</p>
+                    <p>Create content, tag the official accounts, submit your links, and receive payment directly. The programme is open to all community members, holder or not.</p>
+                    <a href="#" class="text-link" style="padding:0 0 3px;">Claim Your Cash</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASH HOW TO -->
+    <section class="cash-section">
+        <div class="wrap">
+            <div class="section-eyebrow">Earn Programme</div>
+            <div class="section-head">
+                <h2>How Real Cash Works</h2>
+            </div>
+            <div class="cash-steps">
+                <div class="cash-step">
+                    <div class="num">01</div>
+                    <h4>Create Content</h4>
+                    <p>Post about Spanky on any platform — TikTok, X, Instagram, YouTube, Reddit. Anything that drives reach and engagement counts.</p>
+                </div>
+                <div class="cash-step">
+                    <div class="num">02</div>
+                    <h4>Submit Your Links</h4>
+                    <p>Share your post links through the official rewards portal (coming at mint launch). Our team verifies impressions and engagement within 48 hours.</p>
+                </div>
+                <div class="cash-step">
+                    <div class="num">03</div>
+                    <h4>Get Paid</h4>
+                    <p>Cash is paid out to your nominated wallet or bank account weekly. No minimum threshold for the first round — every qualifying post earns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="claim.html">Claim</a>
+                <a href="access.html">Access</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="community.html">Community</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+            </div>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        function openMenu() { mobileMenu.classList.add('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+        hamburgerBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+        mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    </script>
+
+</body>
+</html>

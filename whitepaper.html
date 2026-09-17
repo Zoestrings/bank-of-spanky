@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bank of Spanky Whitepaper — the official manifesto, vision, and operational blueprint for the Spanky ecosystem.">
+    <title>Whitepaper — Bank of Spanky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spanky.css">
+    <style>
+        /* PAGE HERO */
+        .page-hero {
+            padding: 80px 0 70px;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .page-hero .eyebrow {
+            font-size: 0.82rem;
+            letter-spacing: 0.18em;
+            color: var(--warm-grey);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+        .page-hero .sub {
+            color: var(--ink-soft);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 52ch;
+            margin-bottom: 32px;
+        }
+        .page-hero .meta {
+            font-size: 0.82rem;
+            color: var(--warm-grey);
+            letter-spacing: 0.08em;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .meta-item { display: flex; gap: 8px; align-items: center; }
+
+        /* CONTENTS */
+        .doc-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .doc-section.alt { background: var(--paper); }
+        .doc-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        @media (min-width: 860px) {
+            .doc-layout { grid-template-columns: 220px 1fr; gap: 80px; }
+        }
+        .doc-sidebar {
+            position: sticky;
+            top: 96px;
+            align-self: start;
+        }
+        .doc-toc {
+            list-style: none;
+            border-left: 2px solid var(--line);
+            padding-left: 20px;
+        }
+        .doc-toc li {
+            margin-bottom: 12px;
+        }
+        .doc-toc a {
+            font-size: 0.86rem;
+            color: var(--warm-grey);
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+        .doc-toc a:hover { color: var(--ink); }
+        .doc-toc .toc-section {
+            font-size: 0.76rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            font-weight: 500;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+        .doc-toc li:first-child .toc-section { margin-top: 0; }
+
+        /* DOC BODY */
+        .doc-body { max-width: 700px; }
+        .wp-section { margin-bottom: 64px; }
+        .wp-section:last-child { margin-bottom: 0; }
+        .wp-section-num {
+            font-size: 0.76rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            margin-bottom: 10px;
+        }
+        .wp-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .wp-section p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .wp-section p:last-child { margin-bottom: 0; }
+        .wp-section h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 28px 0 12px;
+        }
+        .wp-list {
+            list-style: none;
+            margin: 0 0 18px;
+        }
+        .wp-list li {
+            font-size: 0.97rem;
+            color: var(--ink-soft);
+            line-height: 1.75;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .wp-list li:first-child { border-top: 1px solid var(--line); }
+        .li-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--warm-grey);
+            border-radius: 50%;
+            margin-top: 9px;
+            flex-shrink: 0;
+        }
+        .wp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.93rem;
+        }
+        .wp-table th {
+            text-align: left;
+            padding: 10px 16px;
+            font-weight: 500;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            border-bottom: 2px solid var(--line);
+        }
+        .wp-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink-soft);
+            line-height: 1.6;
+            vertical-align: top;
+        }
+        .wp-table tr:last-child td { border-bottom: none; }
+        .wp-table td:first-child { color: var(--ink); font-weight: 500; }
+        .wp-callout {
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--ink);
+            padding: 20px 24px;
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            line-height: 1.75;
+            background: var(--ivory);
+            margin: 24px 0;
+        }
+        .wp-callout strong { color: var(--ink); }
+
+        /* DOWNLOAD BAR */
+        .download-section {
+            padding: 72px 0;
+            border-bottom: 1px solid var(--line);
+            background: var(--paper);
+        }
+        .download-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .download-label h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: 6px; }
+        .download-label p { font-size: 0.9rem; color: var(--ink-soft); }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--ink);
+            color: var(--paper);
+            border: 1px solid var(--ink);
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+            text-decoration: none;
+        }
+        .download-btn:hover { background: var(--ivory); color: var(--ink); }
+    </style>
+</head>
+
+<body>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mobile-menu-inner">
+            <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&#10005;</button>
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <a href="claim.html" class="mobile-nav-link">Claim</a>
+                <a href="access.html" class="mobile-nav-link">Access</a>
+                <a href="blueprint.html" class="mobile-nav-link">Blueprint</a>
+                <a href="merch.html" class="mobile-nav-link">Merch Drop</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener" class="mobile-nav-link">Store</a>
+                <a href="community.html" class="mobile-nav-link">Community</a>
+                <a href="whitepaper.html" class="mobile-nav-link">Whitepaper</a>
+            </nav>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="navlinks">
+                <a href="claim.html">Claim</a>
+                <a href="access.html">Access</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="merch.html">Merch Drop</a>
+            </div>
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="navicons">
+                    <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="pink-rule"></div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <div class="wrap">
+            <div class="eyebrow">Official Manifesto</div>
+            <h1>The Bank of Spanky<br>Whitepaper</h1>
+            <p class="sub">The complete vision, structure, and operational blueprint for the Bank of Spanky NFT ecosystem — merch pipeline, capital allocation, token strategy, and community governance.</p>
+            <div class="meta">
+                <span class="meta-item">Version 1.0</span>
+                <span class="meta-item">September 2026</span>
+                <span class="meta-item">Spanky World LLC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD BAR -->
+    <div class="download-section">
+        <div class="wrap">
+            <div class="download-inner">
+                <div class="download-label">
+                    <h3>Whitepaper v1.0 — PDF</h3>
+                    <p>Full document · 12 pages · Last updated September 2026</p>
+                </div>
+                <a href="#" class="download-btn" onclick="alert('PDF download available at launch.')">
+                    ↓ &nbsp;Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOCUMENT BODY -->
+    <section class="doc-section">
+        <div class="wrap">
+            <div class="doc-layout">
+
+                <!-- TABLE OF CONTENTS -->
+                <aside class="doc-sidebar">
+                    <ul class="doc-toc">
+                        <li><span class="toc-section">Contents</span></li>
+                        <li><a href="#wp-vision">01 — Vision &amp; Mission</a></li>
+                        <li><a href="#wp-ecosystem">02 — The Ecosystem</a></li>
+                        <li><a href="#wp-collection">03 — NFT Collection</a></li>
+                        <li><a href="#wp-merch">04 — Merch Pipeline</a></li>
+                        <li><a href="#wp-token">05 — Token Strategy</a></li>
+                        <li><a href="#wp-allocation">06 — Capital Allocation</a></li>
+                        <li><a href="#wp-governance">07 — Governance</a></li>
+                        <li><a href="#wp-roadmap">08 — Roadmap</a></li>
+                        <li><a href="#wp-legal">09 — Legal Disclosure</a></li>
+                    </ul>
+                </aside>
+
+                <!-- DOCUMENT CONTENT -->
+                <div class="doc-body">
+
+                    <div class="wp-section" id="wp-vision">
+                        <div class="wp-section-num">Section 01</div>
+                        <h2>Vision &amp; Mission</h2>
+                        <p>The Bank of Spanky is an exclusive digital asset collective designed at the intersection of physical merchandise, blockchain technology, and community-driven media. It is not simply an NFT project — it is an infrastructure layer for a lifestyle brand backed by real-world goods and community equity.</p>
+                        <p>Our mission is to build the most tightly integrated merch-to-digital pipeline in Web3, where every physical product serves as a gateway to a permanent on-chain identity, community access, and financial participation in the brand's growth.</p>
+                        <div class="wp-callout">
+                            <strong>Core Principle:</strong> Every deposit builds the vault. Every holder becomes a stakeholder. Every piece of merch is a key.
+                        </div>
+                    </div>
+
+                    <div class="wp-section" id="wp-ecosystem">
+                        <div class="wp-section-num">Section 02</div>
+                        <h2>The Ecosystem</h2>
+                        <p>The Bank of Spanky ecosystem operates across four interconnected pillars:</p>
+                        <ul class="wp-list">
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">NFT Collection</strong> A 333-piece genesis collection on Solana with tiered rarity and utility.</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Merch Pipeline</strong> Physical goods that unlock companion NFT claims, creating a permanent merch-digital loop.</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">$SPANKY Token</strong> A community memecoin liquidity-paired using mint revenue.</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Community Access</strong> Token-gated Discord, Telegram, and Spanky School channels for verified holders.</li>
+                        </ul>
+                        <p>These four pillars reinforce each other: owning the NFT unlocks community access; buying merch creates a new NFT; holding the NFT earns $SPANKY; $SPANKY deepens ecosystem participation.</p>
+                    </div>
+
+                    <div class="wp-section" id="wp-collection">
+                        <div class="wp-section-num">Section 03</div>
+                        <h2>NFT Collection</h2>
+                        <p>The genesis collection consists of 333 unique NFTs minted on the Solana blockchain, structured across five rarity tiers:</p>
+                        <table class="wp-table">
+                            <thead>
+                                <tr><th>Tier</th><th>Supply</th><th>Access Level</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Legendary Vault Keeper</td><td>7 (1-of-1s)</td><td>Full Keeper Council + Revenue Share</td></tr>
+                                <tr><td>Rare Vault Member</td><td>26</td><td>Vault Member channels + priority WL</td></tr>
+                                <tr><td>Uncommon</td><td>67</td><td>OG Holder channels</td></tr>
+                                <tr><td>Common</td><td>133</td><td>OG Holder channels</td></tr>
+                                <tr><td>Merch Claim NFTs</td><td>Unlimited</td><td>Community access, non-tiered</td></tr>
+                            </tbody>
+                        </table>
+                        <p>The 333-piece primary collection is released on GraveMint on September 24th, 2026. Merch Claim NFTs are issued continuously as companion tokens upon physical purchase verification.</p>
+                    </div>
+
+                    <div class="wp-section" id="wp-merch">
+                        <div class="wp-section-num">Section 04</div>
+                        <h2>Merch Pipeline</h2>
+                        <p>The Bank of Spanky Merch Pipeline is the core innovation of the project — a closed-loop system where physical product purchases generate on-chain assets automatically.</p>
+                        <h3>How It Works</h3>
+                        <ul class="wp-list">
+                            <li><span class="li-dot"></span>Customer purchases an official item from ogspanky.com</li>
+                            <li><span class="li-dot"></span>Item ships with a physical NFC/QR authentication tag</li>
+                            <li><span class="li-dot"></span>Customer scans tag and connects a Solana wallet</li>
+                            <li><span class="li-dot"></span>Companion NFT mints gas-free into the customer's wallet</li>
+                            <li><span class="li-dot"></span>NFT grants community access and future drop priority</li>
+                        </ul>
+                        <p>Each tag code is single-use and expires 90 days from purchase. Items manufactured through verified production partners include apparel, headwear, collector pins, and limited seasonal releases.</p>
+                    </div>
+
+                    <div class="wp-section" id="wp-token">
+                        <div class="wp-section-num">Section 05</div>
+                        <h2>Token Strategy</h2>
+                        <p>$SPANKY is the community memecoin of the Bank of Spanky ecosystem. It is not a security, utility token, or governance instrument — it is a cultural asset representing participation in Spanky World.</p>
+                        <p>40% of genesis mint revenue is allocated to $SPANKY liquidity pool seeding on Raydium or Orca. Genesis NFT holders receive a proportional $SPANKY allocation at launch, with Legendary Vault Keepers receiving the highest allocation per token held.</p>
+                        <div class="wp-callout">
+                            <strong>Note:</strong> $SPANKY is a memecoin with no guaranteed value. Allocation is a community gesture, not an investment. Never invest more than you can afford to lose.
+                        </div>
+                    </div>
+
+                    <div class="wp-section" id="wp-allocation">
+                        <div class="wp-section-num">Section 06</div>
+                        <h2>Capital Allocation</h2>
+                        <p>Genesis mint revenue is allocated across three categories with defined percentages:</p>
+                        <table class="wp-table">
+                            <thead>
+                                <tr><th>Category</th><th>Allocation</th><th>Purpose</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Liquidity &amp; Token Reserve</td><td>40%</td><td>$SPANKY LP seeding, floor buybacks, reserve</td></tr>
+                                <tr><td>Content Production</td><td>35%</td><td>Video editing, distribution, media ops</td></tr>
+                                <tr><td>Merch Inventory</td><td>25%</td><td>Manufacturing, packaging, claim tag production</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Secondary market royalties (5%) are split between the Legendary Vault Keeper revenue share pool and ongoing operational costs.</p>
+                    </div>
+
+                    <div class="wp-section" id="wp-governance">
+                        <div class="wp-section-num">Section 07</div>
+                        <h2>Governance</h2>
+                        <p>Governance in the Bank of Spanky ecosystem operates through holder voting in the verified Discord #governance channel. Voting rights are weighted by tier:</p>
+                        <ul class="wp-list">
+                            <li><span class="li-dot"></span>OG Holders — 1 vote per NFT held</li>
+                            <li><span class="li-dot"></span>Vault Members — 3 votes per NFT held</li>
+                            <li><span class="li-dot"></span>Legendary Vault Keepers — 10 votes per 1-of-1 held</li>
+                        </ul>
+                        <p>Votes are non-binding advisory signals unless a quorum of 50%+ of eligible holders participate, at which point the founding team treats the outcome as directionally binding.</p>
+                    </div>
+
+                    <div class="wp-section" id="wp-roadmap">
+                        <div class="wp-section-num">Section 08</div>
+                        <h2>Roadmap</h2>
+                        <ul class="wp-list">
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Phase 01 — Sep 2026</strong> Genesis mint, merch claim portal, Discord launch, $SPANKY LP</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Phase 02 — Q4 2026</strong> Holder-only merch drop, Spanky School beta, governance system</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Phase 03 — Q1 2027</strong> Content studio, ad revenue sharing, creator fund</li>
+                            <li><span class="li-dot"></span><strong style="color:var(--ink);margin-right:8px;">Phase 04 — Q2–Q3 2027</strong> Global merch, collab NFT drops, IRL events, V2 collection</li>
+                        </ul>
+                    </div>
+
+                    <div class="wp-section" id="wp-legal">
+                        <div class="wp-section-num">Section 09</div>
+                        <h2>Legal Disclosure</h2>
+                        <p>This whitepaper is provided for informational purposes only and does not constitute financial, investment, legal, or tax advice. The Bank of Spanky NFTs and $SPANKY token are not securities and should not be treated as such.</p>
+                        <p>Digital collectibles carry significant financial risk. The value of NFTs and associated tokens can go to zero. Past performance of related assets is not indicative of future results. Do not invest more than you can afford to lose entirely.</p>
+                        <p>Spanky World LLC reserves the right to modify the roadmap, allocation percentages, and project structure in response to market conditions, regulatory changes, or community governance decisions.</p>
+                        <div class="wp-callout">
+                            This document is subject to change. Always verify the latest version on the official Bank of Spanky website. Never rely on third-party copies or screenshots.
+                        </div>
+                    </div>
+
+                </div><!-- /.doc-body -->
+            </div><!-- /.doc-layout -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
+                    Bank of Spanky
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="claim.html">Claim</a>
+                <a href="merch.html">Merch Drop</a>
+                <a href="blueprint.html">Blueprint</a>
+                <a href="access.html">Access</a>
+                <a href="community.html">Community</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
+            </div>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        function openMenu() { mobileMenu.classList.add('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('is-open'); hamburgerBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+        hamburgerBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+        mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    </script>
+
+</body>
+</html>
