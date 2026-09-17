@@ -1,17 +1,15 @@
 /* ============================================================
-   BANK OF SPANKY - Main Stylesheet
+   BANK OF SPANKY - Preserved Brand Design System
    ============================================================ */
 
 /* ---------- DESIGN TOKENS ---------- */
 :root {
-    --ivory: #faf9f6;
-    --paper: #ffffff;
-    --ink: #1a1a1a;
-    --ink-soft: #4a4a4a;
-    --line: #dcd8cf;
-    --warm-grey: #8c8577;
-    --spanky-pink: #e8a0b4;
-    --spanky-pink-deep: #c97a90;
+    --ivory: #FAF9F6;
+    --paper: #FFFFFF;
+    --ink: #171717;
+    --ink-soft: #55504A;
+    --line: #DED9D0;
+    --warm-grey: #8B8479;
 }
 
 /* ---------- RESET ---------- */
@@ -100,7 +98,7 @@ nav {
 }
 
 .navlinks a:hover {
-    border-color: var(--spanky-pink-deep);
+    border-color: var(--ink);
 }
 
 .navicons {
@@ -127,29 +125,26 @@ nav {
     width: 36px;
     height: 36px;
     background: transparent;
-    border: none;
+    border: 1px solid var(--line);
     cursor: pointer;
     padding: 4px;
     border-radius: 4px;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .hamburger-btn:hover {
-    background: rgba(0, 0, 0, 0.06);
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--ink);
 }
 
 .ham-line {
     display: block;
-    width: 22px;
+    width: 20px;
     height: 2px;
     background: var(--ink);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hamburger always visible — top-right corner on all screen sizes */
-.hamburger-btn {
-    display: flex;
+    margin: 0 auto;
 }
 
 @media (max-width: 899px) {
@@ -163,7 +158,7 @@ nav {
     position: fixed;
     inset: 0;
     z-index: 200;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.4);
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.25s ease, visibility 0.25s ease;
@@ -183,7 +178,7 @@ nav {
     padding: 20px 0 32px;
     transform: translateY(-100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .mobile-menu-overlay.is-open .mobile-menu-inner {
@@ -225,18 +220,17 @@ nav {
 }
 
 .mobile-nav-link:hover {
-    background: #faf9f6;
-    color: var(--spanky-pink-deep);
+    background: var(--ivory);
+    color: var(--ink);
+    font-weight: 500;
 }
 
-/* thin pink rule under header */
 .pink-rule {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--spanky-pink), transparent);
+    height: 1px;
+    background: var(--line);
 }
 
 /* ---------- HERO ---------- */
-/* FIX: removed duplicate border-bottom (already declared in section{}) */
 .hero {
     padding: 80px 0 100px;
 }
@@ -257,8 +251,9 @@ nav {
 .hero-tag {
     font-size: 0.82rem;
     letter-spacing: 0.18em;
-    color: var(--spanky-pink-deep);
+    color: var(--warm-grey);
     margin-bottom: 22px;
+    text-transform: uppercase;
 }
 
 .hero h1 {
@@ -267,6 +262,7 @@ nav {
     letter-spacing: 0.01em;
     line-height: 1.1;
     margin-bottom: 26px;
+    color: var(--ink);
 }
 
 .hero .sub {
@@ -281,7 +277,7 @@ nav {
 .countdown-label {
     font-size: 0.82rem;
     letter-spacing: 0.14em;
-    color: var(--spanky-pink-deep);
+    color: var(--warm-grey);
     margin-bottom: 14px;
     text-transform: uppercase;
 }
@@ -298,8 +294,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #f3f2e8;
-    border: 1px solid #ddd9cc;
+    background: var(--paper);
+    border: 1px solid var(--line);
     min-width: 80px;
     padding: 14px 12px 10px;
     flex: 1;
@@ -308,7 +304,7 @@ nav {
 .cd-num {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
-    color: #b8a96a;
+    color: var(--ink);
     line-height: 1;
     font-family: 'Georgia', serif;
     letter-spacing: 0.02em;
@@ -317,14 +313,14 @@ nav {
 .cd-unit {
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-    color: #b8a96a;
+    color: var(--warm-grey);
     margin-top: 6px;
     text-transform: capitalize;
 }
 
 .cd-ended {
     font-size: 1.1rem;
-    color: var(--spanky-pink-deep);
+    color: var(--ink);
     letter-spacing: 0.06em;
     padding: 20px 0;
 }
@@ -343,30 +339,31 @@ nav {
     letter-spacing: 0.08em;
     cursor: pointer;
     border-radius: 0;
+    transition: all 0.2s ease;
 }
 
 .btn-primary {
     background: var(--ink);
-    color: var(--paper);
+    color: var(--ivory);
     border: 1px solid var(--ink);
-    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn-primary:hover {
-    background: var(--spanky-pink-deep);
-    border-color: var(--spanky-pink-deep);
+    background: var(--ivory);
+    color: var(--ink);
+    border-color: var(--ink);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--ink);
-    border: 1px solid var(--ink);
-    transition: background 0.2s ease, color 0.2s ease;
+    border: 1px solid var(--line);
 }
 
 .btn-secondary:hover {
     background: var(--ink);
-    color: var(--paper);
+    color: var(--ivory);
+    border-color: var(--ink);
 }
 
 /* ---------- HERO MEDIA ---------- */
@@ -394,6 +391,7 @@ nav {
     letter-spacing: 0.06em;
     padding: 6px 12px;
     z-index: 2;
+    color: var(--ink);
 }
 
 .rarity-badge.two {
@@ -425,8 +423,9 @@ section {
 .section-eyebrow {
     font-size: 0.82rem;
     letter-spacing: 0.14em;
-    color: var(--spanky-pink-deep);
+    color: var(--warm-grey);
     margin-bottom: 18px;
+    text-transform: uppercase;
 }
 
 .section-head {
@@ -438,6 +437,7 @@ section {
     font-size: clamp(2rem, 3.6vw, 2.7rem);
     font-weight: 400;
     margin-bottom: 20px;
+    color: var(--ink);
 }
 
 .section-head p {
@@ -463,6 +463,8 @@ section {
 .cat-card {
     border-bottom: 1px solid var(--line);
     padding: 0 0 36px;
+    background: var(--ivory);
+    transition: background 0.2s ease;
 }
 
 @media (min-width: 760px) {
@@ -490,6 +492,7 @@ section {
     letter-spacing: 0.03em;
     margin-bottom: 10px;
     padding: 0 28px;
+    color: var(--ink);
 }
 
 @media (min-width: 760px) {
@@ -511,13 +514,18 @@ section {
     }
 }
 
-/* FIX: added display:inline-block so padding renders correctly on <a> tags */
 .text-link {
     display: inline-block;
     font-size: 0.86rem;
     letter-spacing: 0.08em;
-    border-bottom: 1px solid var(--spanky-pink-deep);
+    border-bottom: 1px solid var(--ink);
     padding: 0 28px 3px;
+    color: var(--ink);
+    transition: opacity 0.2s ease;
+}
+
+.text-link:hover {
+    opacity: 0.7;
 }
 
 @media (min-width: 760px) {
@@ -558,7 +566,7 @@ section {
 .pipeline-step .num {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
-    color: var(--spanky-pink-deep);
+    color: var(--warm-grey);
     margin-bottom: 16px;
 }
 
@@ -566,6 +574,7 @@ section {
     font-size: 1.15rem;
     font-weight: 400;
     margin-bottom: 12px;
+    color: var(--ink);
 }
 
 .pipeline-step p {
@@ -607,6 +616,7 @@ section {
     font-size: 1.15rem;
     font-weight: 400;
     margin-bottom: 14px;
+    color: var(--ink);
 }
 
 .access-card p {
@@ -615,11 +625,7 @@ section {
     line-height: 1.8;
 }
 
-/* ---------- BLUEPRINT / ALLOCATION ---------- */
-.alloc-rows {
-    /* wrapper - groups rows, no visual style */
-}
-
+/* ---------- BLUEPRINT ---------- */
 .alloc-row {
     display: grid;
     grid-template-columns: 1fr;
@@ -642,6 +648,7 @@ section {
 .alloc-row h3 {
     font-size: 1.15rem;
     font-weight: 400;
+    color: var(--ink);
 }
 
 .alloc-row p {
@@ -654,11 +661,12 @@ section {
     margin-top: 32px;
     padding: 20px 24px;
     border: 1px solid var(--line);
-    border-left: 3px solid var(--spanky-pink);
+    border-left: 3px solid var(--ink);
     font-size: 0.82rem;
     color: var(--ink-soft);
     max-width: 680px;
     line-height: 1.7;
+    background: var(--paper);
 }
 
 /* ---------- WHO IS SPANKY ---------- */
@@ -675,6 +683,7 @@ section {
     font-weight: 400;
     margin: 0 auto 22px;
     max-width: 20ch;
+    color: var(--ink);
 }
 
 .story p {
@@ -685,7 +694,6 @@ section {
     line-height: 1.8;
 }
 
-/* FIX: moved from inline style="padding:0 0 3px" on .story .text-link */
 .story .text-link {
     padding: 0 0 3px;
 }
@@ -693,13 +701,15 @@ section {
 /* ---------- NEWSLETTER ---------- */
 .newsletter {
     text-align: center;
-    background: linear-gradient(180deg, var(--ivory), #fdf3f6);
+    background: var(--ivory);
+    border-top: 1px solid var(--line);
 }
 
 .newsletter h2 {
     font-size: clamp(1.8rem, 3.2vw, 2.3rem);
     font-weight: 400;
     margin-bottom: 14px;
+    color: var(--ink);
 }
 
 .newsletter p {
@@ -713,6 +723,7 @@ section {
     max-width: 440px;
     margin: 0 auto;
     border: 1px solid var(--ink);
+    background: var(--paper);
 }
 
 .newsletter-form input {
@@ -732,22 +743,24 @@ section {
 .newsletter-form button {
     padding: 15px 26px;
     background: var(--ink);
-    color: var(--paper);
+    color: var(--ivory);
     border: none;
     font-family: inherit;
     font-size: 0.76rem;
     letter-spacing: 0.1em;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .newsletter-form button:hover {
-    background: var(--spanky-pink-deep);
+    background: var(--ink-soft);
 }
 
 /* ---------- FOOTER ---------- */
 footer {
     padding: 56px 0 36px;
     text-align: center;
+    background: var(--ivory);
 }
 
 .footer-links {
@@ -762,7 +775,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--spanky-pink-deep);
+    color: var(--ink);
 }
 
 footer .brand {
@@ -770,7 +783,6 @@ footer .brand {
     margin-bottom: 18px;
 }
 
-/* FIX: moved from inline style="height:30px" on footer logo img */
 footer .brand img {
     height: 30px;
     width: auto;

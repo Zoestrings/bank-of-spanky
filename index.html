@@ -14,14 +14,12 @@
 
         /* ---------- DESIGN TOKENS ---------- */
         :root {
-            --ivory: #faf9f6;
-            --paper: #ffffff;
-            --ink: #1a1a1a;
-            --ink-soft: #4a4a4a;
-            --line: #dcd8cf;
-            --warm-grey: #8c8577;
-            --spanky-pink: #e8a0b4;
-            --spanky-pink-deep: #c97a90;
+            --ivory: #FAF9F6;
+            --paper: #FFFFFF;
+            --ink: #171717;
+            --ink-soft: #55504A;
+            --line: #DED9D0;
+            --warm-grey: #8B8479;
         }
 
         /* ---------- RESET ---------- */
@@ -110,7 +108,7 @@
         }
 
         .navlinks a:hover {
-            border-color: var(--spanky-pink-deep);
+            border-color: var(--ink);
         }
 
         .navicons {
@@ -235,14 +233,14 @@
         }
 
         .mobile-nav-link:hover {
-            background: #faf9f6;
-            color: var(--spanky-pink-deep);
+            background: var(--ivory);
+            color: var(--ink);
+            font-weight: 500;
         }
 
-        /* thin pink rule under header */
         .pink-rule {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--spanky-pink), transparent);
+            height: 1px;
+            background: var(--line);
         }
 
         /* ---------- HERO ---------- */
@@ -266,8 +264,9 @@
         .hero-tag {
             font-size: 0.82rem;
             letter-spacing: 0.18em;
-            color: var(--spanky-pink-deep);
+            color: var(--warm-grey);
             margin-bottom: 22px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
@@ -290,7 +289,7 @@
         .countdown-label {
             font-size: 0.82rem;
             letter-spacing: 0.14em;
-            color: var(--spanky-pink-deep);
+            color: var(--warm-grey);
             margin-bottom: 14px;
             text-transform: uppercase;
         }
@@ -307,8 +306,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #f3f2e8;
-            border: 1px solid #ddd9cc;
+            background: var(--paper);
+            border: 1px solid var(--line);
             min-width: 80px;
             padding: 14px 12px 10px;
             flex: 1;
@@ -317,7 +316,7 @@
         .cd-num {
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 400;
-            color: #b8a96a;
+            color: var(--ink);
             line-height: 1;
             font-family: 'Georgia', serif;
             letter-spacing: 0.02em;
@@ -326,14 +325,14 @@
         .cd-unit {
             font-size: 0.8rem;
             letter-spacing: 0.1em;
-            color: #b8a96a;
+            color: var(--warm-grey);
             margin-top: 6px;
             text-transform: capitalize;
         }
 
         .cd-ended {
             font-size: 1.1rem;
-            color: var(--spanky-pink-deep);
+            color: var(--ink);
             letter-spacing: 0.06em;
             padding: 20px 0;
         }
@@ -362,8 +361,9 @@
         }
 
         .btn-primary:hover {
-            background: var(--spanky-pink-deep);
-            border-color: var(--spanky-pink-deep);
+            background: var(--ivory);
+            color: var(--ink);
+            border-color: var(--ink);
         }
 
         .btn-secondary {
@@ -434,8 +434,9 @@
         .section-eyebrow {
             font-size: 0.82rem;
             letter-spacing: 0.14em;
-            color: var(--spanky-pink-deep);
+            color: var(--warm-grey);
             margin-bottom: 18px;
+            text-transform: uppercase;
         }
 
         .section-head {
@@ -524,8 +525,14 @@
             display: inline-block;
             font-size: 0.86rem;
             letter-spacing: 0.08em;
-            border-bottom: 1px solid var(--spanky-pink-deep);
+            border-bottom: 1px solid var(--ink);
             padding: 0 28px 3px;
+            color: var(--ink);
+            transition: opacity 0.2s ease;
+        }
+
+        .text-link:hover {
+            opacity: 0.7;
         }
 
         @media (min-width: 760px) {
@@ -566,7 +573,7 @@
         .pipeline-step .num {
             font-size: 0.85rem;
             letter-spacing: 0.1em;
-            color: var(--spanky-pink-deep);
+            color: var(--warm-grey);
             margin-bottom: 16px;
         }
 
@@ -659,11 +666,12 @@
             margin-top: 32px;
             padding: 20px 24px;
             border: 1px solid var(--line);
-            border-left: 3px solid var(--spanky-pink);
+            border-left: 3px solid var(--ink);
             font-size: 0.82rem;
             color: var(--ink-soft);
             max-width: 680px;
             line-height: 1.7;
+            background: var(--paper);
         }
 
         /* ---------- WHO IS SPANKY ---------- */
@@ -697,7 +705,8 @@
         /* ---------- NEWSLETTER ---------- */
         .newsletter {
             text-align: center;
-            background: linear-gradient(180deg, var(--ivory), #fdf3f6);
+            background: var(--ivory);
+            border-top: 1px solid var(--line);
         }
 
         .newsletter h2 {
@@ -717,6 +726,7 @@
             max-width: 440px;
             margin: 0 auto;
             border: 1px solid var(--ink);
+            background: var(--paper);
         }
 
         .newsletter-form input {
@@ -736,16 +746,17 @@
         .newsletter-form button {
             padding: 15px 26px;
             background: var(--ink);
-            color: var(--paper);
+            color: var(--ivory);
             border: none;
             font-family: inherit;
             font-size: 0.76rem;
             letter-spacing: 0.1em;
             cursor: pointer;
+            transition: background 0.2s ease;
         }
 
         .newsletter-form button:hover {
-            background: var(--spanky-pink-deep);
+            background: var(--ink-soft);
         }
 
         /* ---------- FOOTER ---------- */
@@ -766,7 +777,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--spanky-pink-deep);
+            color: var(--ink);
         }
 
         footer .brand {
