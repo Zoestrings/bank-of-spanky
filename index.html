@@ -345,42 +345,78 @@
         /* ---------- BUTTONS ---------- */
         .cta-row {
             display: flex;
-            gap: 18px;
+            align-items: center;
+            gap: 16px;
             flex-wrap: wrap;
+            margin-top: 12px;
         }
 
         .btn {
-            padding: 15px 30px;
-            font-family: inherit;
-            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+            font-size: 0.86rem;
+            font-weight: 700;
             letter-spacing: 0.08em;
+            text-transform: uppercase;
             cursor: pointer;
-            border-radius: 0;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
         }
 
         .btn-primary {
             background: var(--ink);
             color: var(--paper);
             border: 1px solid var(--ink);
-            transition: background 0.2s ease, color 0.2s ease;
+            box-shadow: 0 4px 14px rgba(23, 23, 23, 0.12);
         }
 
         .btn-primary:hover {
-            background: var(--ivory);
-            color: var(--ink);
-            border-color: var(--ink);
+            background: #2a2a2a;
+            color: #ffffff;
+            border-color: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(23, 23, 23, 0.22);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(23, 23, 23, 0.15);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--paper);
             color: var(--ink);
-            border: 1px solid var(--ink);
-            transition: background 0.2s ease, color 0.2s ease;
+            border: 1px solid var(--line);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .btn-secondary:hover {
             background: var(--ink);
             color: var(--paper);
+            border-color: var(--ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(23, 23, 23, 0.15);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        .btn-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .btn-primary:hover .btn-arrow {
+            transform: translateX(4px);
         }
 
         /* ---------- HERO MEDIA ---------- */
@@ -885,8 +921,13 @@
                     </div>
 
                     <div class="cta-row">
-                        <button class="btn btn-primary">Mint on GraveMint / Enter Whitelist</button>
-                        <button class="btn btn-secondary">Join Holder Discord</button>
+                        <a href="claim.html" class="btn btn-primary">
+                            <span>Join the Whitelist</span>
+                            <span class="btn-arrow">&rarr;</span>
+                        </a>
+                        <a href="discord.html" class="btn btn-secondary">
+                            <span>Join Holder Discord</span>
+                        </a>
                     </div>
                 </div>
 
