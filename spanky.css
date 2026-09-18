@@ -795,3 +795,204 @@ footer p.notice {
     margin: 0 auto;
     line-height: 1.7;
 }
+
+/* ---------- BRAND INTRODUCTION PILLS ---------- */
+.pill-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+@media (min-width: 760px) {
+    .pill-matrix {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.pill-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 24px 18px;
+    text-align: center;
+    border-radius: 6px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.pill-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--ink);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+.pill-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.pill-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+/* ---------- FLOW DIAGRAM ---------- */
+.flow-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 48px;
+    padding: 32px 24px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+@media (min-width: 800px) {
+    .flow-diagram {
+        flex-direction: row;
+    }
+}
+.flow-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    min-width: 140px;
+    text-align: center;
+}
+.flow-node-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+.flow-arrow {
+    font-size: 1.4rem;
+    color: var(--warm-grey);
+}
+@media (max-width: 799px) {
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* ---------- MERCH SHOWCASE ---------- */
+.merch-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 48px;
+}
+@media (min-width: 760px) {
+    .merch-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.merch-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.merch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+    border-color: var(--ink);
+}
+.merch-card-img-wrap {
+    position: relative;
+    aspect-ratio: 1/1;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+}
+.merch-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.merch-card:hover .merch-card-img-wrap img {
+    transform: scale(1.04);
+}
+.merch-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+.merch-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.merch-card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+}
+.merch-card-body p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+.merch-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+}
+.merch-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+/* ---------- NAV CTA BUTTON ---------- */
+.nav-cta-btn {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid var(--ink);
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+}
+.nav-cta-btn:hover {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+/* ---------- ACCESSIBILITY PREFERS REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
