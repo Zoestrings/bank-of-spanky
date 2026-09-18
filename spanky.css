@@ -405,13 +405,47 @@ nav {
 .video-strip {
     border-bottom: 1px solid var(--line);
     background: var(--paper);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-strip video {
     width: 100%;
+    height: auto;
+    max-width: 100%;
     display: block;
-    max-height: 520px;
     object-fit: cover;
+    border: none;
+    outline: none;
+    aspect-ratio: 16/9;
+}
+
+@media (min-width: 1025px) {
+    .video-strip video {
+        max-height: 520px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .video-strip video {
+        max-height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-strip video {
+        max-height: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-strip video {
+        max-height: 240px;
+    }
 }
 
 /* ---------- SECTION SHELL ---------- */

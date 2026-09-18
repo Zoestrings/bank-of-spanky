@@ -566,13 +566,21 @@
         .video-strip {
             border-bottom: 1px solid var(--line);
             background: var(--paper);
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .video-strip video {
             width: 100%;
+            height: auto;
+            max-width: 100%;
             display: block;
-            max-height: 520px;
             object-fit: cover;
+            aspect-ratio: 16/9;
         }
 
         /* ---------- STORY / MANIFESTO ---------- */
@@ -1000,7 +1008,7 @@
 
     <!-- MEDIA / VIDEO STRIP -->
     <div class="video-strip">
-        <video controls muted playsinline
+        <video controls autoplay loop muted playsinline webkit-playsinline preload="auto"
             poster="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/08/banner-we-earn-we-spanky.png">
             <source
                 src="https://mediumturquoise-grasshopper-556994.hostingersite.com/wp-content/uploads/2026/09/SPANK-BANG.mp4"
