@@ -898,10 +898,29 @@
                 <h1>The Bank of Spanky</h1>
                 <p class="sub">Digital collectibles backed by physical merch drops. An exclusive digital asset collective and media network backed by real-world merchandise and verified community access.</p>
 
-                <!-- MINT LAUNCH ANNOUNCEMENT -->
-                <div class="mint-announcement-box" style="background: var(--paper); border: 1px solid var(--line); padding: 14px 24px; border-radius: 6px; margin-bottom: 32px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <span style="display:inline-block; width:8px; height:8px; background:#10B981; border-radius:50%; box-shadow:0 0 8px #10B981;"></span>
-                    <span style="font-size:0.92rem; font-weight:600; letter-spacing:0.04em; color:var(--ink);">Mint opens September 24, 2026 — 18:00 UTC</span>
+                <!-- LIVE COUNTDOWN TIMER -->
+                <div class="countdown-wrap" style="margin-bottom: 36px; text-align: center;">
+                    <div class="countdown-label" style="font-size: 0.82rem; letter-spacing: 0.14em; color: var(--warm-grey); margin-bottom: 16px; text-transform: uppercase;">
+                        Mint Launch — September 24, 2026 at 18:00 UTC
+                    </div>
+                    <div class="countdown" id="countdown" aria-live="polite" aria-label="Countdown to NFT drop">
+                        <div class="cd-box">
+                            <span class="cd-num" id="cd-days">00</span>
+                            <span class="cd-unit">Days</span>
+                        </div>
+                        <div class="cd-box">
+                            <span class="cd-num" id="cd-hours">00</span>
+                            <span class="cd-unit">Hours</span>
+                        </div>
+                        <div class="cd-box">
+                            <span class="cd-num" id="cd-minutes">00</span>
+                            <span class="cd-unit">Minutes</span>
+                        </div>
+                        <div class="cd-box">
+                            <span class="cd-num" id="cd-seconds">00</span>
+                            <span class="cd-unit">Seconds</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="cta-row">
@@ -972,16 +991,24 @@
 
     <script>
         /* ── COUNTDOWN TIMER ── */
-        const target = new Date('2026-09-24T03:50:59');
+        const target = new Date('2026-09-24T18:00:00Z').getTime();
 
         function pad(n) { return String(n).padStart(2, '0'); }
 
         function tick() {
-            const now = new Date();
+            const now = new Date().getTime();
             const diff = target - now;
 
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minutesEl = document.getElementById('cd-minutes');
+            const secondsEl = document.getElementById('cd-seconds');
+
+            if (!daysEl) return;
+
             if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<p class="cd-ended">The drop has launched! 🚀</p>';
+                const cdBox = document.getElementById('countdown');
+                if (cdBox) cdBox.innerHTML = '<p class="cd-ended">The drop is LIVE! 🚀</p>';
                 return;
             }
 
@@ -990,10 +1017,10 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('cd-days').textContent = pad(days);
-            document.getElementById('cd-hours').textContent = pad(hours);
-            document.getElementById('cd-minutes').textContent = pad(minutes);
-            document.getElementById('cd-seconds').textContent = pad(seconds);
+            daysEl.textContent = pad(days);
+            hoursEl.textContent = pad(hours);
+            minutesEl.textContent = pad(minutes);
+            secondsEl.textContent = pad(seconds);
         }
 
         tick();
