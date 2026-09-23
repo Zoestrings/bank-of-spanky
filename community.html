@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bank of Spanky Community — join us on Discord, Twitter/X, and Telegram. One vault, three channels.">
+    <meta name="description"
+        content="Bank of Spanky Community — join us on Discord, Twitter/X, and Telegram. One vault, three channels.">
     <title>Community — Bank of Spanky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="spanky.css">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         /* PAGE HERO */
         .page-hero {
@@ -17,6 +21,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .page-hero .eyebrow {
             font-size: 0.82rem;
             letter-spacing: 0.18em;
@@ -24,6 +29,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
+
         .page-hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.6rem);
             font-weight: 400;
@@ -31,6 +37,7 @@
             line-height: 1.1;
             margin-bottom: 22px;
         }
+
         .page-hero .sub {
             color: var(--ink-soft);
             font-size: 1.1rem;
@@ -43,6 +50,7 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .platform-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -50,9 +58,13 @@
             border-top: 1px solid var(--line);
             margin-top: 48px;
         }
+
         @media (min-width: 760px) {
-            .platform-grid { grid-template-columns: repeat(3, 1fr); }
+            .platform-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
+
         .platform-card {
             padding: 56px 36px 56px 0;
             border-bottom: 1px solid var(--line);
@@ -60,14 +72,19 @@
             flex-direction: column;
             gap: 0;
         }
+
         @media (min-width: 760px) {
             .platform-card {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 56px 40px;
             }
-            .platform-card:last-child { border-right: none; }
+
+            .platform-card:last-child {
+                border-right: none;
+            }
         }
+
         .platform-wordmark {
             font-size: 0.72rem;
             letter-spacing: 0.18em;
@@ -76,6 +93,7 @@
             margin-bottom: 24px;
             font-family: 'Inter', sans-serif;
         }
+
         .platform-icon-wrap {
             width: 56px;
             height: 56px;
@@ -87,6 +105,7 @@
             margin-bottom: 24px;
             flex-shrink: 0;
         }
+
         .platform-name {
             font-size: 1.7rem;
             font-weight: 400;
@@ -94,6 +113,7 @@
             margin-bottom: 16px;
             font-family: 'Georgia', serif;
         }
+
         .platform-desc {
             color: var(--ink-soft);
             font-size: 0.96rem;
@@ -101,11 +121,13 @@
             flex: 1;
             margin-bottom: 32px;
         }
+
         .platform-perks {
             list-style: none;
             margin-bottom: 36px;
             border-top: 1px solid var(--line);
         }
+
         .platform-perks li {
             padding: 10px 0;
             font-size: 0.88rem;
@@ -115,6 +137,7 @@
             align-items: flex-start;
             gap: 10px;
         }
+
         .perk-dot {
             width: 4px;
             height: 4px;
@@ -123,6 +146,7 @@
             margin-top: 8px;
             flex-shrink: 0;
         }
+
         .platform-join-btn {
             display: inline-flex;
             align-items: center;
@@ -139,14 +163,17 @@
             align-self: flex-start;
             text-decoration: none;
         }
+
         .platform-join-btn:hover {
             background: var(--ivory);
             color: var(--ink);
         }
+
         .platform-join-btn.outline {
             background: transparent;
             color: var(--ink);
         }
+
         .platform-join-btn.outline:hover {
             background: var(--ink);
             color: var(--paper);
@@ -157,25 +184,45 @@
             border-bottom: 1px solid var(--line);
             background: var(--ivory);
         }
+
         .stats-inner {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
+
         @media (min-width: 700px) {
-            .stats-inner { grid-template-columns: repeat(4, 1fr); }
+            .stats-inner {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
+
         .stat-block {
             padding: 40px 28px;
             border-right: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
             text-align: center;
         }
-        @media (min-width: 700px) { .stat-block { border-bottom: none; } }
-        .stat-block:nth-child(2n) { border-right: none; }
+
         @media (min-width: 700px) {
-            .stat-block:nth-child(2n) { border-right: 1px solid var(--line); }
-            .stat-block:last-child { border-right: none; }
+            .stat-block {
+                border-bottom: none;
+            }
         }
+
+        .stat-block:nth-child(2n) {
+            border-right: none;
+        }
+
+        @media (min-width: 700px) {
+            .stat-block:nth-child(2n) {
+                border-right: 1px solid var(--line);
+            }
+
+            .stat-block:last-child {
+                border-right: none;
+            }
+        }
+
         .stat-num {
             font-size: 2.2rem;
             font-weight: 400;
@@ -183,6 +230,7 @@
             display: block;
             margin-bottom: 6px;
         }
+
         .stat-label {
             font-size: 0.76rem;
             letter-spacing: 0.1em;
@@ -196,6 +244,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .rules-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -203,7 +252,13 @@
             margin-top: 48px;
             border-top: 1px solid var(--line);
         }
-        @media (min-width: 700px) { .rules-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        @media (min-width: 700px) {
+            .rules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .rule-item {
             padding: 28px 0;
             border-bottom: 1px solid var(--line);
@@ -211,10 +266,20 @@
             gap: 20px;
             align-items: flex-start;
         }
+
         @media (min-width: 700px) {
-            .rule-item { padding: 28px 36px 28px 0; border-right: 1px solid var(--line); }
-            .rule-item:nth-child(even) { border-right: none; padding-left: 36px; padding-right: 0; }
+            .rule-item {
+                padding: 28px 36px 28px 0;
+                border-right: 1px solid var(--line);
+            }
+
+            .rule-item:nth-child(even) {
+                border-right: none;
+                padding-left: 36px;
+                padding-right: 0;
+            }
         }
+
         .rule-num {
             font-size: 1.4rem;
             font-weight: 400;
@@ -224,14 +289,25 @@
             line-height: 1;
             padding-top: 3px;
         }
-        .rule-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
-        .rule-content p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; }
+
+        .rule-content h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .rule-content p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            line-height: 1.7;
+        }
 
         /* FOOTER CTA */
         .cta-section {
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .cta-box {
             border: 1px solid var(--ink);
             padding: 64px 48px;
@@ -239,11 +315,13 @@
             max-width: 680px;
             margin: 0 auto;
         }
+
         .cta-box h2 {
             font-size: clamp(1.8rem, 3.5vw, 2.3rem);
             font-weight: 400;
             margin-bottom: 16px;
         }
+
         .cta-box p {
             color: var(--ink-soft);
             font-size: 1rem;
@@ -253,12 +331,14 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .cta-buttons {
             display: flex;
             gap: 14px;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .safety-note {
             margin-top: 22px;
             font-size: 0.8rem;
@@ -297,6 +377,7 @@
             </div>
             <div class="brand">
                 <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -305,7 +386,8 @@
                     <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
                     <a href="community.html">Community</a>
                 </div>
-                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
@@ -320,7 +402,8 @@
         <div class="wrap">
             <div class="eyebrow">Join the Movement</div>
             <h1>The Spanky<br>Community</h1>
-            <p class="sub">One vault, three channels. Whether you're here for alpha, updates, or just the vibe — pick your platform, join the family, and never miss a drop.</p>
+            <p class="sub">One vault, three channels. Whether you're here for alpha, updates, or just the vibe — pick
+                your platform, join the family, and never miss a drop.</p>
         </div>
     </div>
 
@@ -361,13 +444,18 @@
                 <!-- DISCORD -->
                 <div class="platform-card" style="border-top: 3px solid #5865F2;">
                     <div class="platform-wordmark" style="color: #5865F2;">Voice &amp; Community</div>
-                    <div class="platform-icon-wrap" style="background: #5865F2; padding: 12px; border-radius: 14px; display: inline-flex; width: 52px; height: 52px; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(88, 101, 242, 0.35);">
-                        <svg width="32" height="32" viewBox="0 0 127.14 96.36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.67 1.76 1.35 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15zM42.45 65.69c-6.28 0-11.41-5.77-11.41-12.87 0-7.1 5-12.87 11.41-12.87 6.44 0 11.53 5.82 11.41 12.87 0 7.1-5 12.87-11.41 12.87zm42.24 0c-6.28 0-11.41-5.77-11.41-12.87 0-7.1 5-12.87 11.41-12.87 6.44 0 11.53 5.82 11.41 12.87 0 7.1-5 12.87-11.41 12.87z" fill="#FFFFFF"/>
+                    <div class="platform-icon-wrap"
+                        style="background: #5865F2; padding: 12px; border-radius: 14px; display: inline-flex; width: 52px; height: 52px; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(88, 101, 242, 0.35);">
+                        <svg width="32" height="32" viewBox="0 0 127.14 96.36" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path
+                                d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.67 1.76 1.35 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15zM42.45 65.69c-6.28 0-11.41-5.77-11.41-12.87 0-7.1 5-12.87 11.41-12.87 6.44 0 11.53 5.82 11.41 12.87 0 7.1-5 12.87-11.41 12.87zm42.24 0c-6.28 0-11.41-5.77-11.41-12.87 0-7.1 5-12.87 11.41-12.87 6.44 0 11.53 5.82 11.41 12.87 0 7.1-5 12.87-11.41 12.87z"
+                                fill="#FFFFFF" />
                         </svg>
                     </div>
                     <div class="platform-name">Discord</div>
-                    <p class="platform-desc">The main vault. Token-gated channels, live voice rooms, community voting, and holder-only alpha. The deepest layer of the Spanky ecosystem — all in one server.</p>
+                    <p class="platform-desc">The main vault. Token-gated channels, live voice rooms, community voting,
+                        and holder-only alpha. The deepest layer of the Spanky ecosystem — all in one server.</p>
                     <ul class="platform-perks">
                         <li><span class="perk-dot"></span>Token-gated holder channels</li>
                         <li><span class="perk-dot"></span>Real-time announcements &amp; drops</li>
@@ -375,7 +463,8 @@
                         <li><span class="perk-dot"></span>Governance voting &amp; proposals</li>
                         <li><span class="perk-dot"></span>Spanky School alpha network</li>
                     </ul>
-                    <a href="https://discord.gg/KnjS5NgxH" target="_blank" rel="noopener" class="platform-join-btn" style="background:#5865F2; border-color:#5865F2;">
+                    <a href="https://discord.gg/KnjS5NgxH" target="_blank" rel="noopener" class="platform-join-btn"
+                        style="background:#5865F2; border-color:#5865F2;">
                         Join Discord
                     </a>
                 </div>
@@ -383,13 +472,18 @@
                 <!-- TWITTER / X -->
                 <div class="platform-card" style="border-top: 3px solid #1DA1F2;">
                     <div class="platform-wordmark" style="color: #1DA1F2;">Updates &amp; Culture</div>
-                    <div class="platform-icon-wrap" style="background: rgba(29, 161, 242, 0.08); padding: 12px; border-radius: 50%; display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#1DA1F2"/>
+                    <div class="platform-icon-wrap"
+                        style="background: rgba(29, 161, 242, 0.08); padding: 12px; border-radius: 50%; display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"
+                                fill="#1DA1F2" />
                         </svg>
                     </div>
                     <div class="platform-name">X (Twitter)</div>
-                    <p class="platform-desc">Everything public. New drops, mint announcements, culture, memes, and real-time Spanky energy — all on X. Follow for daily content and be the first to know.</p>
+                    <p class="platform-desc">Everything public. New drops, mint announcements, culture, memes, and
+                        real-time Spanky energy — all on X. Follow for daily content and be the first to know.</p>
                     <ul class="platform-perks">
                         <li><span class="perk-dot"></span>Drop announcements &amp; countdowns</li>
                         <li><span class="perk-dot"></span>Daily Spanky content &amp; memes</li>
@@ -397,7 +491,8 @@
                         <li><span class="perk-dot"></span>Behind-the-scenes content</li>
                         <li><span class="perk-dot"></span>Real cash reward posts</li>
                     </ul>
-                    <a href="https://x.com/bigbankspanky" target="_blank" rel="noopener" class="platform-join-btn outline" style="border-color:#1DA1F2; color:#1DA1F2;">
+                    <a href="https://x.com/bigbankspanky" target="_blank" rel="noopener"
+                        class="platform-join-btn outline" style="border-color:#1DA1F2; color:#1DA1F2;">
                         Follow on X
                     </a>
                 </div>
@@ -405,13 +500,19 @@
                 <!-- TELEGRAM -->
                 <div class="platform-card" style="border-top: 3px solid #26A5E4;">
                     <div class="platform-wordmark" style="color: #26A5E4;">Fast Intel &amp; Alerts</div>
-                    <div class="platform-icon-wrap" style="background: rgba(38, 165, 228, 0.08); padding: 12px; border-radius: 50%; display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="#26A5E4"/>
+                    <div class="platform-icon-wrap"
+                        style="background: rgba(38, 165, 228, 0.08); padding: 12px; border-radius: 50%; display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                                fill="#26A5E4" />
                         </svg>
                     </div>
                     <div class="platform-name">Telegram</div>
-                    <p class="platform-desc">Fast-moving, no noise. Spanky's Telegram hub is for quick alerts, insider signals, and time-sensitive calls. If you want to stay ahead of every move — this is the channel.</p>
+                    <p class="platform-desc">Fast-moving, no noise. Spanky's Telegram hub is for quick alerts, insider
+                        signals, and time-sensitive calls. If you want to stay ahead of every move — this is the
+                        channel.</p>
                     <ul class="platform-perks">
                         <li><span class="perk-dot"></span>Instant drop &amp; mint alerts</li>
                         <li><span class="perk-dot"></span>$SPANKY token calls &amp; signals</li>
@@ -419,7 +520,8 @@
                         <li><span class="perk-dot"></span>Direct team broadcasts</li>
                         <li><span class="perk-dot"></span>Flash sale &amp; whitelist notices</li>
                     </ul>
-                    <a href="https://t.me/bankofspanky" target="_blank" rel="noopener" class="platform-join-btn outline" style="border-color:#26A5E4; color:#26A5E4;">
+                    <a href="https://t.me/bankofspanky" target="_blank" rel="noopener" class="platform-join-btn outline"
+                        style="border-color:#26A5E4; color:#26A5E4;">
                         Join Telegram
                     </a>
                 </div>
@@ -434,49 +536,56 @@
             <div class="section-eyebrow">Community Standards</div>
             <div class="section-head">
                 <h2>The Code of the Vault</h2>
-                <p>These rules apply across all three platforms. Break them and your access gets revoked — permanently.</p>
+                <p>These rules apply across all three platforms. Break them and your access gets revoked — permanently.
+                </p>
             </div>
             <div class="rules-grid">
                 <div class="rule-item">
                     <div class="rule-num">01</div>
                     <div class="rule-content">
                         <h4>No Unofficial Links</h4>
-                        <p>Never share or click links from unverified sources. All official links come only from verified admin accounts or this website.</p>
+                        <p>Never share or click links from unverified sources. All official links come only from
+                            verified admin accounts or this website.</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-num">02</div>
                     <div class="rule-content">
                         <h4>Never Share Your Seed Phrase</h4>
-                        <p>No admin, mod, or team member will ever ask for your wallet seed phrase. Anyone who does is a scammer — report immediately.</p>
+                        <p>No admin, mod, or team member will ever ask for your wallet seed phrase. Anyone who does is a
+                            scammer — report immediately.</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-num">03</div>
                     <div class="rule-content">
                         <h4>Respect All Members</h4>
-                        <p>Keep it respectful and constructive across all platforms. Hate speech, harassment, or discrimination results in an instant permanent ban.</p>
+                        <p>Keep it respectful and constructive across all platforms. Hate speech, harassment, or
+                            discrimination results in an instant permanent ban.</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-num">04</div>
                     <div class="rule-content">
                         <h4>No Unsolicited Promotion</h4>
-                        <p>Shilling other projects without admin approval is not permitted in any channel. Use the designated spaces with permission only.</p>
+                        <p>Shilling other projects without admin approval is not permitted in any channel. Use the
+                            designated spaces with permission only.</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-num">05</div>
                     <div class="rule-content">
                         <h4>Keep Holder Alpha Private</h4>
-                        <p>Information shared in gated channels stays in gated channels. Leaking holder-only content results in permanent access removal.</p>
+                        <p>Information shared in gated channels stays in gated channels. Leaking holder-only content
+                            results in permanent access removal.</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-num">06</div>
                     <div class="rule-content">
                         <h4>When In Doubt, Ask</h4>
-                        <p>If something feels off — a link, a DM, an offer — post in #support before acting. The team responds fast. Better safe than rugged.</p>
+                        <p>If something feels off — a link, a DM, an offer — post in #support before acting. The team
+                            responds fast. Better safe than rugged.</p>
                     </div>
                 </div>
             </div>
@@ -488,11 +597,15 @@
         <div class="wrap">
             <div class="cta-box">
                 <h2>Join All Three Platforms</h2>
-                <p>Discord for depth, X for culture, Telegram for speed. The full Spanky experience lives across all three.</p>
+                <p>Discord for depth, X for culture, Telegram for speed. The full Spanky experience lives across all
+                    three.</p>
                 <div class="cta-buttons">
-                    <a href="https://discord.gg/KnjS5NgxH" target="_blank" rel="noopener" class="btn btn-primary">Join Discord</a>
-                    <a href="https://x.com/bigbankspanky" target="_blank" rel="noopener" class="btn btn-secondary">Follow on X</a>
-                    <a href="https://t.me/bankofspanky" target="_blank" rel="noopener" class="btn btn-secondary">Telegram</a>
+                    <a href="https://discord.gg/KnjS5NgxH" target="_blank" rel="noopener" class="btn btn-primary">Join
+                        Discord</a>
+                    <a href="https://x.com/bigbankspanky" target="_blank" rel="noopener"
+                        class="btn btn-secondary">Follow on X</a>
+                    <a href="https://t.me/bankofspanky" target="_blank" rel="noopener"
+                        class="btn btn-secondary">Telegram</a>
                 </div>
                 <p class="safety-note">⚠️ Only join through this official page. Never from a DM or unverified link.</p>
             </div>
@@ -503,7 +616,8 @@
     <footer>
         <div class="wrap">
             <div class="brand">
-                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;justify-content:center;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -516,7 +630,8 @@
                 <a href="community.html">Community</a>
                 <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
             </div>
-            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.
+            </p>
         </div>
     </footer>
 
@@ -535,4 +650,5 @@
     </script>
 
 </body>
+
 </html>

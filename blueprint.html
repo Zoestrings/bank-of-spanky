@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Bank of Spanky Blueprint — project utility, capital allocation, and roadmap for the NFT and merch ecosystem.">
+    <meta name="description"
+        content="The Bank of Spanky Blueprint — project utility, capital allocation, and roadmap for the NFT and merch ecosystem.">
     <title>Blueprint — Bank of Spanky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="spanky.css">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         /* PAGE HERO */
         .page-hero {
@@ -17,6 +21,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .page-hero .eyebrow {
             font-size: 0.82rem;
             letter-spacing: 0.18em;
@@ -24,6 +29,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
+
         .page-hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.6rem);
             font-weight: 400;
@@ -31,6 +37,7 @@
             line-height: 1.1;
             margin-bottom: 22px;
         }
+
         .page-hero .sub {
             color: var(--ink-soft);
             font-size: 1.1rem;
@@ -43,10 +50,12 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .alloc-table {
             margin-top: 48px;
             border-top: 1px solid var(--line);
         }
+
         .alloc-row-full {
             display: grid;
             grid-template-columns: 1fr;
@@ -55,13 +64,19 @@
             border-bottom: 1px solid var(--line);
             align-items: start;
         }
+
         @media (min-width: 700px) {
-            .alloc-row-full { grid-template-columns: 220px 80px 1fr; gap: 0 40px; }
+            .alloc-row-full {
+                grid-template-columns: 220px 80px 1fr;
+                gap: 0 40px;
+            }
         }
+
         .alloc-title {
             font-size: 1.1rem;
             font-weight: 400;
         }
+
         .alloc-pct {
             font-size: 1.6rem;
             font-weight: 400;
@@ -69,18 +84,25 @@
             font-family: 'Georgia', serif;
             line-height: 1;
         }
+
         .alloc-desc {
             color: var(--ink-soft);
             font-size: 0.96rem;
             line-height: 1.8;
         }
+
         .alloc-bar-wrap {
             grid-column: 1 / -1;
             margin-top: 6px;
         }
+
         @media (min-width: 700px) {
-            .alloc-bar-wrap { grid-column: 3 / 4; margin-top: 14px; }
+            .alloc-bar-wrap {
+                grid-column: 3 / 4;
+                margin-top: 14px;
+            }
         }
+
         .alloc-bar {
             height: 4px;
             background: var(--line);
@@ -88,6 +110,7 @@
             border-radius: 2px;
             overflow: hidden;
         }
+
         .alloc-bar-fill {
             height: 100%;
             background: var(--ink);
@@ -102,6 +125,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .roadmap-grid {
             margin-top: 48px;
             display: grid;
@@ -109,21 +133,30 @@
             gap: 0;
             border-top: 1px solid var(--line);
         }
+
         @media (min-width: 700px) {
-            .roadmap-grid { grid-template-columns: repeat(4, 1fr); }
+            .roadmap-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
+
         .phase {
             padding: 40px 32px 40px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 700px) {
             .phase {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 40px 28px;
             }
-            .phase:last-child { border-right: none; }
+
+            .phase:last-child {
+                border-right: none;
+            }
         }
+
         .phase-label {
             font-size: 0.76rem;
             letter-spacing: 0.14em;
@@ -131,20 +164,24 @@
             color: var(--warm-grey);
             margin-bottom: 12px;
         }
+
         .phase-title {
             font-size: 1.1rem;
             font-weight: 400;
             margin-bottom: 16px;
         }
+
         .phase-date {
             font-size: 0.82rem;
             color: var(--warm-grey);
             letter-spacing: 0.06em;
             margin-bottom: 20px;
         }
+
         .phase-items {
             list-style: none;
         }
+
         .phase-items li {
             font-size: 0.9rem;
             color: var(--ink-soft);
@@ -152,7 +189,11 @@
             border-bottom: 1px solid var(--line);
             line-height: 1.5;
         }
-        .phase-items li:last-child { border-bottom: none; }
+
+        .phase-items li:last-child {
+            border-bottom: none;
+        }
+
         .phase-status {
             display: inline-block;
             font-size: 0.7rem;
@@ -163,6 +204,7 @@
             color: var(--warm-grey);
             margin-top: 16px;
         }
+
         .phase-status.live {
             border-color: var(--ink);
             color: var(--ink);
@@ -173,6 +215,7 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .full-alloc-grid {
             margin-top: 48px;
             display: grid;
@@ -180,29 +223,37 @@
             gap: 0;
             border-top: 1px solid var(--line);
         }
+
         @media (min-width: 760px) {
-            .full-alloc-grid { grid-template-columns: repeat(2, 1fr); }
+            .full-alloc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         .full-alloc-item {
             padding: 32px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 760px) {
             .full-alloc-item {
                 padding: 32px 36px 32px 0;
                 border-right: 1px solid var(--line);
             }
+
             .full-alloc-item:nth-child(even) {
                 border-right: none;
                 padding-left: 36px;
                 padding-right: 0;
             }
         }
+
         .full-alloc-item h4 {
             font-size: 1.05rem;
             font-weight: 400;
             margin-bottom: 10px;
         }
+
         .full-alloc-item p {
             color: var(--ink-soft);
             font-size: 0.95rem;
@@ -240,6 +291,7 @@
             </div>
             <div class="brand">
                 <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -248,7 +300,8 @@
                     <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
                     <a href="community.html">Community</a>
                 </div>
-                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
@@ -263,7 +316,8 @@
         <div class="wrap">
             <div class="eyebrow">Project Utility &amp; Capital Allocation</div>
             <h1>The Blueprint</h1>
-            <p class="sub">Every dollar raised through the mint is allocated with intention. No vague roadmaps, no rug — this is how the vault works and where the money goes.</p>
+            <p class="sub">Every dollar raised through the mint is allocated with intention. No vague roadmaps, no rug —
+                this is how the vault works and where the money goes.</p>
         </div>
     </div>
 
@@ -279,25 +333,37 @@
                 <div class="alloc-row-full">
                     <div class="alloc-title">Liquidity &amp; Token Reserve</div>
                     <div class="alloc-pct">40%</div>
-                    <div class="alloc-desc">Mint revenue funds future memecoin liquidity pool pairing and secondary supply floor stabilization. This reserve ensures $SPANKY has market depth from day one and protects floor price through structured buyback mechanisms.</div>
+                    <div class="alloc-desc">Mint revenue funds future memecoin liquidity pool pairing and secondary
+                        supply floor stabilization. This reserve ensures $SPANKY has market depth from day one and
+                        protects floor price through structured buyback mechanisms.</div>
                     <div class="alloc-bar-wrap">
-                        <div class="alloc-bar"><div class="alloc-bar-fill" data-width="40"></div></div>
+                        <div class="alloc-bar">
+                            <div class="alloc-bar-fill" data-width="40"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="alloc-row-full">
                     <div class="alloc-title">Content Production</div>
                     <div class="alloc-pct">35%</div>
-                    <div class="alloc-desc">High-velocity video editing, multi-platform media clipping, and organic marketing pushes. The Spanky media machine runs on content — reels, shorts, long-form, and community-generated clips all amplified through paid and organic distribution.</div>
+                    <div class="alloc-desc">High-velocity video editing, multi-platform media clipping, and organic
+                        marketing pushes. The Spanky media machine runs on content — reels, shorts, long-form, and
+                        community-generated clips all amplified through paid and organic distribution.</div>
                     <div class="alloc-bar-wrap">
-                        <div class="alloc-bar"><div class="alloc-bar-fill" data-width="35"></div></div>
+                        <div class="alloc-bar">
+                            <div class="alloc-bar-fill" data-width="35"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="alloc-row-full">
                     <div class="alloc-title">Merch Inventory</div>
                     <div class="alloc-pct">25%</div>
-                    <div class="alloc-desc">Continuous production of high-grade physical goods and packaging. Every item ships with a physical NFT claim tag, keeping the merch-to-digital pipeline alive and scalable across all seasonal drops.</div>
+                    <div class="alloc-desc">Continuous production of high-grade physical goods and packaging. Every item
+                        ships with a physical NFT claim tag, keeping the merch-to-digital pipeline alive and scalable
+                        across all seasonal drops.</div>
                     <div class="alloc-bar-wrap">
-                        <div class="alloc-bar"><div class="alloc-bar-fill" data-width="25"></div></div>
+                        <div class="alloc-bar">
+                            <div class="alloc-bar-fill" data-width="25"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -375,24 +441,31 @@
             <div class="full-alloc-grid">
                 <div class="full-alloc-item">
                     <h4>$SPANKY Liquidity Mechanics</h4>
-                    <p>A portion of mint funds pair with $SPANKY in a Raydium or Orca AMM pool to create trading depth. The reserve fund buys back floor NFTs during dips, maintaining price stability for long-term holders.</p>
+                    <p>A portion of mint funds pair with $SPANKY in a Raydium or Orca AMM pool to create trading depth.
+                        The reserve fund buys back floor NFTs during dips, maintaining price stability for long-term
+                        holders.</p>
                 </div>
                 <div class="full-alloc-item">
                     <h4>Content Production Model</h4>
-                    <p>An in-house team of editors and strategists handles daily posting across TikTok, Instagram, YouTube Shorts, and X. Holders in the Vault Member+ tier get performance reports monthly.</p>
+                    <p>An in-house team of editors and strategists handles daily posting across TikTok, Instagram,
+                        YouTube Shorts, and X. Holders in the Vault Member+ tier get performance reports monthly.</p>
                 </div>
                 <div class="full-alloc-item">
                     <h4>Merch Quality Standards</h4>
-                    <p>All physical goods are produced through vetted premium manufacturers. Each item is inspected, tagged with the NFC/QR claim chip, and shipped in branded packaging designed in-house.</p>
+                    <p>All physical goods are produced through vetted premium manufacturers. Each item is inspected,
+                        tagged with the NFC/QR claim chip, and shipped in branded packaging designed in-house.</p>
                 </div>
                 <div class="full-alloc-item">
                     <h4>Revenue Share Structure</h4>
-                    <p>Legendary Vault Keepers participate in a direct revenue share from merch sales. Distribution is proportional to the number of 1-of-1s held and executed quarterly on-chain.</p>
+                    <p>Legendary Vault Keepers participate in a direct revenue share from merch sales. Distribution is
+                        proportional to the number of 1-of-1s held and executed quarterly on-chain.</p>
                 </div>
             </div>
 
             <div class="disclosure">
-                Digital collectibles and any associated tokens carry financial risk and no return is guaranteed. This page is for informational purposes and does not constitute investment advice. Past performance of any related asset is not indicative of future results.
+                Digital collectibles and any associated tokens carry financial risk and no return is guaranteed. This
+                page is for informational purposes and does not constitute investment advice. Past performance of any
+                related asset is not indicative of future results.
             </div>
         </div>
     </section>
@@ -401,7 +474,8 @@
     <footer>
         <div class="wrap">
             <div class="brand">
-                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;justify-content:center;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -413,7 +487,8 @@
                 <a href="community.html">Community</a>
                 <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
             </div>
-            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.
+            </p>
         </div>
     </footer>
 
@@ -446,4 +521,5 @@
     </script>
 
 </body>
+
 </html>

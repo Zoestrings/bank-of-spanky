@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bank of Spanky token-gated community access — exclusive tiers for OG holders, early adopters, and Legendary Vault Keepers.">
+    <meta name="description"
+        content="Bank of Spanky token-gated community access — exclusive tiers for OG holders, early adopters, and Legendary Vault Keepers.">
     <title>Access — Bank of Spanky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="spanky.css">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         /* PAGE HERO */
         .page-hero {
@@ -17,6 +21,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .page-hero .eyebrow {
             font-size: 0.82rem;
             letter-spacing: 0.18em;
@@ -24,6 +29,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
+
         .page-hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.6rem);
             font-weight: 400;
@@ -31,6 +37,7 @@
             line-height: 1.1;
             margin-bottom: 22px;
         }
+
         .page-hero .sub {
             color: var(--ink-soft);
             font-size: 1.1rem;
@@ -43,6 +50,7 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .tier-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -50,23 +58,32 @@
             border-top: 1px solid var(--line);
             margin-top: 48px;
         }
+
         @media (min-width: 760px) {
-            .tier-grid { grid-template-columns: repeat(3, 1fr); }
+            .tier-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
+
         .tier-card {
             padding: 48px 36px 48px 0;
             border-bottom: 1px solid var(--line);
             display: flex;
             flex-direction: column;
         }
+
         @media (min-width: 760px) {
             .tier-card {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 48px 36px;
             }
-            .tier-card:last-child { border-right: none; }
+
+            .tier-card:last-child {
+                border-right: none;
+            }
         }
+
         .tier-badge {
             display: inline-block;
             font-size: 0.72rem;
@@ -78,15 +95,18 @@
             color: var(--ink);
             align-self: flex-start;
         }
+
         .tier-badge.legendary {
             background: var(--ink);
             color: var(--paper);
         }
+
         .tier-name {
             font-size: 1.4rem;
             font-weight: 400;
             margin-bottom: 8px;
         }
+
         .tier-req {
             font-size: 0.84rem;
             color: var(--warm-grey);
@@ -95,10 +115,12 @@
             border-bottom: 1px solid var(--line);
             padding-bottom: 22px;
         }
+
         .tier-perks {
             list-style: none;
             flex: 1;
         }
+
         .tier-perks li {
             padding: 10px 0;
             font-size: 0.95rem;
@@ -109,7 +131,11 @@
             gap: 10px;
             line-height: 1.5;
         }
-        .tier-perks li:last-child { border-bottom: none; }
+
+        .tier-perks li:last-child {
+            border-bottom: none;
+        }
+
         .perk-dot {
             width: 5px;
             height: 5px;
@@ -125,6 +151,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--paper);
         }
+
         .verify-steps {
             display: grid;
             grid-template-columns: 1fr;
@@ -132,32 +159,43 @@
             margin-top: 48px;
             border-top: 1px solid var(--line);
         }
+
         @media (min-width: 700px) {
-            .verify-steps { grid-template-columns: repeat(4, 1fr); }
+            .verify-steps {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
+
         .vstep {
             padding: 40px 28px 40px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 700px) {
             .vstep {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 40px 28px;
             }
-            .vstep:last-child { border-right: none; }
+
+            .vstep:last-child {
+                border-right: none;
+            }
         }
+
         .vstep .num {
             font-size: 0.82rem;
             letter-spacing: 0.12em;
             color: var(--warm-grey);
             margin-bottom: 14px;
         }
+
         .vstep h4 {
             font-size: 1rem;
             font-weight: 500;
             margin-bottom: 10px;
         }
+
         .vstep p {
             font-size: 0.9rem;
             color: var(--ink-soft);
@@ -169,15 +207,20 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
+
         .channels-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
             margin-top: 48px;
         }
+
         @media (min-width: 700px) {
-            .channels-grid { grid-template-columns: repeat(2, 1fr); }
+            .channels-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         .channel-card {
             border: 1px solid var(--line);
             padding: 32px 28px;
@@ -187,21 +230,28 @@
             align-items: flex-start;
             transition: border-color 0.2s ease;
         }
-        .channel-card:hover { border-color: var(--ink); }
+
+        .channel-card:hover {
+            border-color: var(--ink);
+        }
+
         .ch-icon {
             font-size: 1.8rem;
             flex-shrink: 0;
         }
+
         .ch-title {
             font-size: 1.05rem;
             font-weight: 500;
             margin-bottom: 8px;
         }
+
         .ch-desc {
             font-size: 0.92rem;
             color: var(--ink-soft);
             line-height: 1.7;
         }
+
         .ch-badge {
             display: inline-block;
             font-size: 0.72rem;
@@ -244,6 +294,7 @@
             </div>
             <div class="brand">
                 <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -252,7 +303,8 @@
                     <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
                     <a href="community.html">Community</a>
                 </div>
-                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
@@ -267,7 +319,8 @@
         <div class="wrap">
             <div class="eyebrow">Token-Gated Community Ecosystem</div>
             <h1>Verified<br>Access Only</h1>
-            <p class="sub">Holding a Bank of Spanky NFT is your key. Connect your wallet, verify your tier, and unlock channels, drops, and intel no one else can see.</p>
+            <p class="sub">Holding a Bank of Spanky NFT is your key. Connect your wallet, verify your tier, and unlock
+                channels, drops, and intel no one else can see.</p>
         </div>
     </div>
 
@@ -363,61 +416,95 @@
             <div class="channels-grid">
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">Spanky School &amp; Alpha</div>
-                        <p class="ch-desc">Market insights, trading strategies, content creation workshops, and behind-the-scenes brand operations curated by Spanky's inner circle.</p>
+                        <p class="ch-desc">Market insights, trading strategies, content creation workshops, and
+                            behind-the-scenes brand operations curated by Spanky's inner circle.</p>
                         <span class="ch-badge">OG Holder+</span>
                     </div>
                 </div>
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 01-8 0" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">Merch Allocation Room</div>
-                        <p class="ch-desc">First-in-line access to limited-edition physical drops and private collection tiers before public sale announcements.</p>
+                        <p class="ch-desc">First-in-line access to limited-edition physical drops and private collection
+                            tiers before public sale announcements.</p>
                         <span class="ch-badge">Vault Member+</span>
                     </div>
                 </div>
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">Governance &amp; Voting</div>
-                        <p class="ch-desc">Weigh in on upcoming drops, brand decisions, and community fund allocations. Your NFT is your vote.</p>
+                        <p class="ch-desc">Weigh in on upcoming drops, brand decisions, and community fund allocations.
+                            Your NFT is your vote.</p>
                         <span class="ch-badge">OG Holder+</span>
                     </div>
                 </div>
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" />
+                            <path d="M19 10v2a7 7 0 01-14 0v-2" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">VIP Voice Hangouts</div>
-                        <p class="ch-desc">Regular private voice rooms with Spanky and the team. AMAs, strategy sessions, and unfiltered alpha drops.</p>
+                        <p class="ch-desc">Regular private voice rooms with Spanky and the team. AMAs, strategy
+                            sessions, and unfiltered alpha drops.</p>
                         <span class="ch-badge">Vault Member+</span>
                     </div>
                 </div>
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 2L11 13" />
+                            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">Telegram VIP Hub</div>
-                        <p class="ch-desc">Fast-moving insider channel on Telegram. Real-time calls, exclusive previews, and holder-only alerts.</p>
+                        <p class="ch-desc">Fast-moving insider channel on Telegram. Real-time calls, exclusive previews,
+                            and holder-only alerts.</p>
                         <span class="ch-badge">Vault Member+</span>
                     </div>
                 </div>
                 <div class="channel-card">
                     <div class="ch-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
                     </div>
                     <div>
                         <div class="ch-title">Legendary Keeper Council</div>
-                        <p class="ch-desc">Direct advisory access with the Spanky team. Revenue share participation, co-creator credits, and IRL events.</p>
+                        <p class="ch-desc">Direct advisory access with the Spanky team. Revenue share participation,
+                            co-creator credits, and IRL events.</p>
                         <span class="ch-badge">Legendary Only</span>
                     </div>
                 </div>
@@ -429,7 +516,8 @@
     <footer>
         <div class="wrap">
             <div class="brand">
-                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;justify-content:center;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -441,7 +529,8 @@
                 <a href="community.html">Community</a>
                 <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
             </div>
-            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.
+            </p>
         </div>
     </footer>
 
@@ -460,4 +549,5 @@
     </script>
 
 </body>
+
 </html>

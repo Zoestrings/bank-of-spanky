@@ -8,8 +8,11 @@
     <title>Whitepaper | Bank of Spanky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Georgia&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="spanky.css">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         /* ── COVER ── */
         .wp-cover {
@@ -20,27 +23,31 @@
             position: relative;
             overflow: hidden;
         }
+
         .wp-cover::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 60px,
-                rgba(255,255,255,0.015) 60px,
-                rgba(255,255,255,0.015) 61px
-            );
+            background: repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 60px,
+                    rgba(255, 255, 255, 0.015) 60px,
+                    rgba(255, 255, 255, 0.015) 61px);
             pointer-events: none;
         }
-        .wp-cover .wrap { position: relative; }
+
+        .wp-cover .wrap {
+            position: relative;
+        }
+
         .wp-cover .cover-eyebrow {
             font-size: 0.78rem;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255, 255, 255, 0.4);
             margin-bottom: 28px;
         }
+
         .wp-cover h1 {
             font-size: clamp(2.6rem, 6vw, 4.5rem);
             font-weight: 400;
@@ -49,34 +56,39 @@
             letter-spacing: -0.01em;
             color: var(--ivory);
         }
+
         .wp-cover .cover-tagline {
             font-size: clamp(1rem, 2vw, 1.25rem);
-            color: rgba(255,255,255,0.55);
+            color: rgba(255, 255, 255, 0.55);
             line-height: 1.6;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             max-width: 44ch;
             margin-bottom: 48px;
         }
+
         .wp-cover .cover-tagline span {
             display: block;
         }
+
         .cover-meta {
             display: flex;
             gap: 32px;
             flex-wrap: wrap;
-            border-top: 1px solid rgba(255,255,255,0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             padding-top: 28px;
         }
+
         .cover-meta-item {
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255, 255, 255, 0.35);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
+
         .cover-meta-item strong {
             display: block;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 400;
             margin-bottom: 4px;
             font-size: 0.9rem;
@@ -88,6 +100,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--ivory);
         }
+
         .manifesto-cycle {
             font-size: clamp(1.1rem, 2.5vw, 1.6rem);
             font-weight: 400;
@@ -96,10 +109,12 @@
             max-width: 55ch;
             margin-bottom: 36px;
         }
+
         .manifesto-cycle em {
             font-style: normal;
             color: var(--warm-grey);
         }
+
         .manifesto-tagline {
             font-size: 0.9rem;
             font-weight: 500;
@@ -112,15 +127,28 @@
             padding: 90px 0;
             border-bottom: 1px solid var(--line);
         }
-        .wp-section.bg-ivory { background: var(--ivory); }
-        .wp-section.bg-paper { background: var(--paper); }
+
+        .wp-section.bg-ivory {
+            background: var(--ivory);
+        }
+
+        .wp-section.bg-paper {
+            background: var(--paper);
+        }
+
         .wp-section.bg-dark {
             background: var(--ink);
             color: var(--ivory);
         }
+
         .wp-section.bg-dark .section-eyebrow,
-        .wp-section.bg-dark p { color: rgba(255,255,255,0.55); }
-        .wp-section.bg-dark h2 { color: var(--ivory); }
+        .wp-section.bg-dark p {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .wp-section.bg-dark h2 {
+            color: var(--ivory);
+        }
 
         /* ── TWO-COL LAYOUT ── */
         .wp-two-col {
@@ -128,8 +156,12 @@
             grid-template-columns: 1fr;
             gap: 64px;
         }
+
         @media (min-width: 840px) {
-            .wp-two-col { grid-template-columns: 1fr 1fr; gap: 80px; }
+            .wp-two-col {
+                grid-template-columns: 1fr 1fr;
+                gap: 80px;
+            }
         }
 
         /* ── BODY TEXT ── */
@@ -139,8 +171,15 @@
             line-height: 1.9;
             max-width: 62ch;
         }
-        .wp-body p { margin-bottom: 16px; }
-        .wp-body p:last-child { margin-bottom: 0; }
+
+        .wp-body p {
+            margin-bottom: 16px;
+        }
+
+        .wp-body p:last-child {
+            margin-bottom: 0;
+        }
+
         .wp-body .pull-quote {
             font-size: 1.15rem;
             color: var(--ink);
@@ -160,19 +199,30 @@
             border-top: 1px solid var(--line);
             margin-top: 48px;
         }
-        @media (min-width: 720px) { .nym-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        @media (min-width: 720px) {
+            .nym-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         .nym-card {
             padding: 40px 36px 40px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 720px) {
             .nym-card {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 40px 32px;
             }
-            .nym-card:last-child { border-right: none; }
+
+            .nym-card:last-child {
+                border-right: none;
+            }
         }
+
         .nym-card .card-num {
             font-size: 0.72rem;
             letter-spacing: 0.18em;
@@ -180,11 +230,13 @@
             color: var(--warm-grey);
             margin-bottom: 16px;
         }
+
         .nym-card h3 {
             font-size: 1.3rem;
             font-weight: 400;
             margin-bottom: 12px;
         }
+
         .nym-card p {
             font-size: 0.93rem;
             color: var(--ink-soft);
@@ -197,6 +249,7 @@
             border-bottom: 1px solid var(--line);
             background: var(--ink);
         }
+
         .cycle-inner {
             display: flex;
             align-items: center;
@@ -204,6 +257,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .cycle-step {
             font-size: clamp(0.85rem, 1.8vw, 1.1rem);
             font-weight: 400;
@@ -213,9 +267,10 @@
             padding: 12px 20px;
             text-align: center;
         }
+
         .cycle-arrow {
             font-size: 1.2rem;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255, 255, 255, 0.25);
             flex-shrink: 0;
         }
 
@@ -227,20 +282,45 @@
             border-top: 1px solid var(--line);
             margin-top: 48px;
         }
-        @media (min-width: 640px) { .treasury-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 960px) { .treasury-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        @media (min-width: 640px) {
+            .treasury-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 960px) {
+            .treasury-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         .treasury-item {
             padding: 36px 32px 36px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 640px) {
-            .treasury-item { border-right: 1px solid var(--line); padding: 36px 28px; }
-            .treasury-item:nth-child(2n) { border-right: none; }
+            .treasury-item {
+                border-right: 1px solid var(--line);
+                padding: 36px 28px;
+            }
+
+            .treasury-item:nth-child(2n) {
+                border-right: none;
+            }
         }
+
         @media (min-width: 960px) {
-            .treasury-item:nth-child(2n) { border-right: 1px solid var(--line); }
-            .treasury-item:nth-child(3n) { border-right: none; }
+            .treasury-item:nth-child(2n) {
+                border-right: 1px solid var(--line);
+            }
+
+            .treasury-item:nth-child(3n) {
+                border-right: none;
+            }
         }
+
         .treasury-pct {
             font-size: 2.8rem;
             font-weight: 400;
@@ -249,17 +329,20 @@
             line-height: 1;
             margin-bottom: 12px;
         }
+
         .treasury-label {
             font-size: 0.95rem;
             font-weight: 500;
             color: var(--ink);
             margin-bottom: 8px;
         }
+
         .treasury-desc {
             font-size: 0.85rem;
             color: var(--ink-soft);
             line-height: 1.65;
         }
+
         .treasury-total {
             margin-top: 36px;
             padding: 20px 24px;
@@ -272,7 +355,11 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        .treasury-total strong { color: var(--ink); font-size: 1rem; }
+
+        .treasury-total strong {
+            color: var(--ink);
+            font-size: 1rem;
+        }
 
         /* ── CONTENT TYPES ON X ── */
         .content-cloud {
@@ -281,6 +368,7 @@
             gap: 10px;
             margin-top: 32px;
         }
+
         .content-tag {
             padding: 8px 16px;
             border: 1px solid var(--line);
@@ -289,7 +377,11 @@
             background: var(--paper);
             transition: border-color 0.2s ease, color 0.2s ease;
         }
-        .content-tag:hover { border-color: var(--ink); color: var(--ink); }
+
+        .content-tag:hover {
+            border-color: var(--ink);
+            color: var(--ink);
+        }
 
         /* ── STEPS ── */
         .steps-grid {
@@ -299,19 +391,30 @@
             border-top: 1px solid var(--line);
             margin-top: 48px;
         }
-        @media (min-width: 720px) { .steps-grid { grid-template-columns: repeat(5, 1fr); } }
+
+        @media (min-width: 720px) {
+            .steps-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
         .step-item {
             padding: 36px 28px 36px 0;
             border-bottom: 1px solid var(--line);
         }
+
         @media (min-width: 720px) {
             .step-item {
                 border-right: 1px solid var(--line);
                 border-bottom: none;
                 padding: 36px 20px;
             }
-            .step-item:last-child { border-right: none; }
+
+            .step-item:last-child {
+                border-right: none;
+            }
         }
+
         .step-num {
             font-size: 0.72rem;
             letter-spacing: 0.18em;
@@ -320,11 +423,13 @@
             font-family: 'Courier New', monospace;
             margin-bottom: 16px;
         }
+
         .step-title {
             font-size: 1rem;
             font-weight: 500;
             margin-bottom: 10px;
         }
+
         .step-desc {
             font-size: 0.87rem;
             color: var(--ink-soft);
@@ -337,6 +442,7 @@
             margin-top: 36px;
             border-top: 1px solid var(--line);
         }
+
         .mindset-list li {
             padding: 20px 0;
             border-bottom: 1px solid var(--line);
@@ -346,6 +452,7 @@
             align-items: center;
             gap: 16px;
         }
+
         .mindset-list .check {
             width: 20px;
             height: 20px;
@@ -364,28 +471,54 @@
             grid-template-columns: 1fr;
             gap: 0;
             margin-top: 48px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        @media (min-width: 720px) { .endgame-loop { grid-template-columns: repeat(2, 1fr); } }
+
+        @media (min-width: 720px) {
+            .endgame-loop {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .endgame-item {
             padding: 32px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             gap: 20px;
             align-items: flex-start;
         }
+
         @media (min-width: 720px) {
-            .endgame-item { border-right: 1px solid rgba(255,255,255,0.08); padding: 32px 28px; }
-            .endgame-item:nth-child(2n) { border-right: none; }
+            .endgame-item {
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 32px 28px;
+            }
+
+            .endgame-item:nth-child(2n) {
+                border-right: none;
+            }
         }
+
         .endgame-arrow {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.2);
+            color: rgba(255, 255, 255, 0.2);
             flex-shrink: 0;
             padding-top: 3px;
         }
-        .endgame-text strong { display: block; color: var(--ivory); font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; }
-        .endgame-text span { font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+        .endgame-text strong {
+            display: block;
+            color: var(--ivory);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .endgame-text span {
+            font-size: 0.87rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+        }
 
         /* ── CLOSING CTA ── */
         .wp-closing {
@@ -394,11 +527,13 @@
             background: var(--ivory);
             text-align: center;
         }
+
         .wp-closing h2 {
             font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 400;
             margin-bottom: 20px;
         }
+
         .wp-closing .closing-copy {
             font-size: 1rem;
             color: var(--ink-soft);
@@ -406,6 +541,7 @@
             max-width: 44ch;
             margin: 0 auto 40px;
         }
+
         .wp-disclaimer {
             margin-top: 56px;
             padding-top: 32px;
@@ -444,6 +580,7 @@
         <nav>
             <div class="brand">
                 <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -458,7 +595,8 @@
                     <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
                     <a href="community.html">Community</a>
                 </div>
-                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
@@ -507,23 +645,27 @@
             <div class="section-eyebrow">The OG Membership NFT</div>
             <div class="section-head">
                 <h2>Not Your Money (NYM)</h2>
-                <p>NYM is the exclusive NFT collection forming the first membership layer of Bank of Spanky. Minted through GraveMint, NYM NFTs are designed to be more than collectibles.</p>
+                <p>NYM is the exclusive NFT collection forming the first membership layer of Bank of Spanky. Minted
+                    through GraveMint, NYM NFTs are designed to be more than collectibles.</p>
             </div>
             <div class="nym-grid">
                 <div class="nym-card">
                     <div class="card-num">Ownership</div>
                     <h3>A Collectible</h3>
-                    <p>A unique digital collectible directly connected to the Spanky ecosystem: verifiable, on-chain, and permanently yours.</p>
+                    <p>A unique digital collectible directly connected to the Spanky ecosystem: verifiable, on-chain,
+                        and permanently yours.</p>
                 </div>
                 <div class="nym-card">
                     <div class="card-num">Membership</div>
                     <h3>A Connection</h3>
-                    <p>A living connection to the Bank of Spanky community, not a passive asset, but an active membership to a growing network.</p>
+                    <p>A living connection to the Bank of Spanky community, not a passive asset, but an active
+                        membership to a growing network.</p>
                 </div>
                 <div class="nym-card">
                     <div class="card-num">Access</div>
                     <h3>A Gateway</h3>
-                    <p>A gateway to future experiences, campaigns, drops, merchandise, community initiatives, and ecosystem opportunities.</p>
+                    <p>A gateway to future experiences, campaigns, drops, merchandise, community initiatives, and
+                        ecosystem opportunities.</p>
                 </div>
             </div>
             <div class="wp-body" style="margin-top:48px;">
@@ -535,7 +677,8 @@
     <!-- ECONOMIC CYCLE STRIP -->
     <div class="cycle-strip">
         <div class="wrap">
-            <div class="section-eyebrow" style="color:rgba(255,255,255,0.35);margin-bottom:24px;">The Spanky Economic Cycle</div>
+            <div class="section-eyebrow" style="color:rgba(255,255,255,0.35);margin-bottom:24px;">The Spanky Economic
+                Cycle</div>
             <div class="cycle-inner">
                 <div class="cycle-step">Culture</div>
                 <div class="cycle-arrow">→</div>
@@ -556,39 +699,46 @@
             <div class="section-eyebrow">BoS Mint Allocation</div>
             <div class="section-head">
                 <h2>Treasury Allocation</h2>
-                <p>Where the collection revenue goes. The current treasury framework divides planned collection revenue across five strategic areas.</p>
+                <p>Where the collection revenue goes. The current treasury framework divides planned collection revenue
+                    across five strategic areas.</p>
             </div>
             <div class="treasury-grid">
                 <div class="treasury-item">
                     <div class="treasury-pct">30%</div>
                     <div class="treasury-label">Token Liquidity &amp; Deploy Treasury</div>
-                    <p class="treasury-desc">Funding the $SPANKY token liquidity pool and maintaining ecosystem treasury reserves for strategic deployment.</p>
+                    <p class="treasury-desc">Funding the $SPANKY token liquidity pool and maintaining ecosystem treasury
+                        reserves for strategic deployment.</p>
                 </div>
                 <div class="treasury-item">
                     <div class="treasury-pct">25%</div>
                     <div class="treasury-label">NFT Growth &amp; Paid Acquisition</div>
-                    <p class="treasury-desc">Paid campaigns, marketing, and community growth initiatives to expand the holder base and drive collection demand.</p>
+                    <p class="treasury-desc">Paid campaigns, marketing, and community growth initiatives to expand the
+                        holder base and drive collection demand.</p>
                 </div>
                 <div class="treasury-item">
                     <div class="treasury-pct">15%</div>
                     <div class="treasury-label">Market Making &amp; Volume Strategy</div>
-                    <p class="treasury-desc">Active market-making operations to support healthy trading volume and secondary market stability.</p>
+                    <p class="treasury-desc">Active market-making operations to support healthy trading volume and
+                        secondary market stability.</p>
                 </div>
                 <div class="treasury-item">
                     <div class="treasury-pct">15%</div>
                     <div class="treasury-label">Merchandise &amp; Physical Brand Scaling</div>
-                    <p class="treasury-desc">Production of high-grade physical goods, packaging, and the merch-to-NFT claim pipeline infrastructure.</p>
+                    <p class="treasury-desc">Production of high-grade physical goods, packaging, and the merch-to-NFT
+                        claim pipeline infrastructure.</p>
                 </div>
                 <div class="treasury-item">
                     <div class="treasury-pct">15%</div>
                     <div class="treasury-label">Core Team &amp; Operations</div>
-                    <p class="treasury-desc">Ongoing development, community management, platform costs, legal, and the operational running of the project.</p>
+                    <p class="treasury-desc">Ongoing development, community management, platform costs, legal, and the
+                        operational running of the project.</p>
                 </div>
             </div>
             <div class="treasury-total">
                 <strong>100% Allocated</strong>
                 <span>30% + 25% + 15% + 15% + 15% = 100%</span>
-                <span style="margin-left:auto;font-size:0.78rem;">Allocations represent the current strategic framework and may evolve as the ecosystem develops.</span>
+                <span style="margin-left:auto;font-size:0.78rem;">Allocations represent the current strategic framework
+                    and may evolve as the ecosystem develops.</span>
             </div>
         </div>
     </section>
@@ -610,21 +760,26 @@
             <div class="tokenomics-grid">
                 <div class="tokenomics-chart-col">
                     <div class="donut-chart-container">
-                        <svg viewBox="0 0 200 200" width="290" height="290" class="donut-svg" aria-label="Tokenomics Allocation Donut Chart">
+                        <svg viewBox="0 0 200 200" width="290" height="290" class="donut-svg"
+                            aria-label="Tokenomics Allocation Donut Chart">
                             <!-- Background track ring -->
                             <circle cx="100" cy="100" r="70" fill="none" stroke="#FAF9F6" stroke-width="26" />
                             <!-- 40% Community & Liquidity Pool (#A0D8EF) -->
                             <circle cx="100" cy="100" r="70" fill="none" stroke="#A0D8EF" stroke-width="26"
-                                stroke-dasharray="175.93 263.89" stroke-dashoffset="0" transform="rotate(-90 100 100)" />
+                                stroke-dasharray="175.93 263.89" stroke-dashoffset="0"
+                                transform="rotate(-90 100 100)" />
                             <!-- 25% NFT Holder Airdrops & Staking (#F4C2C2) -->
                             <circle cx="100" cy="100" r="70" fill="none" stroke="#F4C2C2" stroke-width="26"
-                                stroke-dasharray="109.96 329.86" stroke-dashoffset="-175.93" transform="rotate(-90 100 100)" />
+                                stroke-dasharray="109.96 329.86" stroke-dashoffset="-175.93"
+                                transform="rotate(-90 100 100)" />
                             <!-- 20% Ecosystem & Treasury (#171717) -->
                             <circle cx="100" cy="100" r="70" fill="none" stroke="#171717" stroke-width="26"
-                                stroke-dasharray="87.96 351.86" stroke-dashoffset="-285.89" transform="rotate(-90 100 100)" />
+                                stroke-dasharray="87.96 351.86" stroke-dashoffset="-285.89"
+                                transform="rotate(-90 100 100)" />
                             <!-- 15% Founding Team (#DED9D0) -->
                             <circle cx="100" cy="100" r="70" fill="none" stroke="#DED9D0" stroke-width="26"
-                                stroke-dasharray="65.97 373.85" stroke-dashoffset="-373.85" transform="rotate(-90 100 100)" />
+                                stroke-dasharray="65.97 373.85" stroke-dashoffset="-373.85"
+                                transform="rotate(-90 100 100)" />
                         </svg>
                         <div class="donut-center-label">
                             <span class="donut-symbol">$SPANKY</span>
@@ -649,7 +804,8 @@
                             <span class="tokenomics-pct">25%</span>
                             <span class="tokenomics-item-title">NFT HOLDER AIRDROPS &amp; STAKING</span>
                         </div>
-                        <p class="tokenomics-item-desc">Rewarded to active merch collectors and NFT minters over 24 months.</p>
+                        <p class="tokenomics-item-desc">Rewarded to active merch collectors and NFT minters over 24
+                            months.</p>
                     </div>
 
                     <div class="tokenomics-item">
@@ -658,7 +814,8 @@
                             <span class="tokenomics-pct">20%</span>
                             <span class="tokenomics-item-title">ECOSYSTEM &amp; TREASURY</span>
                         </div>
-                        <p class="tokenomics-item-desc">Reserved for runway, physical manufacturing, and brand partnerships.</p>
+                        <p class="tokenomics-item-desc">Reserved for runway, physical manufacturing, and brand
+                            partnerships.</p>
                     </div>
 
                     <div class="tokenomics-item">
@@ -682,18 +839,33 @@
                     <div class="section-eyebrow">The Economic Idea</div>
                     <h2>An Active Cultural Economy</h2>
                     <div class="wp-body">
-                        <p>Bank of Spanky is designed around an active cultural economy. This isn't a "buy and wait" project.</p>
-                        <p>When community members create, post, share, and contribute, they add to the network. Every piece of content is a deposit into the ecosystem.</p>
-                        <p class="pull-quote">"The community creates attention. The NFT creates ownership. The treasury creates resources. The bank coordinates the ecosystem."</p>
+                        <p>Bank of Spanky is designed around an active cultural economy. This isn't a "buy and wait"
+                            project.</p>
+                        <p>When community members create, post, share, and contribute, they add to the network. Every
+                            piece of content is a deposit into the ecosystem.</p>
+                        <p class="pull-quote">"The community creates attention. The NFT creates ownership. The treasury
+                            creates resources. The bank coordinates the ecosystem."</p>
                     </div>
                 </div>
                 <div>
                     <div class="section-eyebrow" style="margin-top:28px;">The Loop</div>
                     <ul style="list-style:none;border-top:1px solid var(--line);margin-top:16px;">
-                        <li style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;"><span style="font-weight:500;color:var(--ink);min-width:80px;">Culture</span> Creates attention across the network</li>
-                        <li style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;"><span style="font-weight:500;color:var(--ink);min-width:80px;">Ownership</span> NFT creates on-chain stake in the brand</li>
-                        <li style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;"><span style="font-weight:500;color:var(--ink);min-width:80px;">Treasury</span> Creates resources for growth</li>
-                        <li style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;"><span style="font-weight:500;color:var(--ink);min-width:80px;">The Bank</span> Coordinates the full ecosystem</li>
+                        <li
+                            style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;">
+                            <span style="font-weight:500;color:var(--ink);min-width:80px;">Culture</span> Creates
+                            attention across the network</li>
+                        <li
+                            style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;">
+                            <span style="font-weight:500;color:var(--ink);min-width:80px;">Ownership</span> NFT creates
+                            on-chain stake in the brand</li>
+                        <li
+                            style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;">
+                            <span style="font-weight:500;color:var(--ink);min-width:80px;">Treasury</span> Creates
+                            resources for growth</li>
+                        <li
+                            style="padding:18px 0;border-bottom:1px solid var(--line);font-size:0.95rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;">
+                            <span style="font-weight:500;color:var(--ink);min-width:80px;">The Bank</span> Coordinates
+                            the full ecosystem</li>
                     </ul>
                 </div>
             </div>
@@ -706,10 +878,13 @@
             <div class="section-eyebrow">How to Contribute</div>
             <div class="section-head">
                 <h2>"You Don't Need Permission."</h2>
-                <p>If you can create, post, meme, edit, design, write, entertain, connect people, or bring energy to the community, you can participate.</p>
+                <p>If you can create, post, meme, edit, design, write, entertain, connect people, or bring energy to the
+                    community, you can participate.</p>
             </div>
             <div class="wp-body" style="margin-bottom:32px;">
-                <h3 style="font-size:1rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0;color:var(--warm-grey);">On X (Twitter)</h3>
+                <h3
+                    style="font-size:1rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0;color:var(--warm-grey);">
+                    On X (Twitter)</h3>
             </div>
             <div class="content-cloud">
                 <span class="content-tag">Spanky memes</span>
@@ -727,7 +902,8 @@
                 <span class="content-tag">Raids</span>
                 <span class="content-tag">Collaborations</span>
             </div>
-            <p style="margin-top:24px;font-size:0.85rem;color:var(--warm-grey);">Tag the ecosystem when appropriate. Every post is a deposit.</p>
+            <p style="margin-top:24px;font-size:0.85rem;color:var(--warm-grey);">Tag the ecosystem when appropriate.
+                Every post is a deposit.</p>
         </div>
     </section>
 
@@ -758,12 +934,14 @@
                 <div class="step-item">
                     <div class="step-num">Connect</div>
                     <div class="step-title">Join the Bank</div>
-                    <p class="step-desc">Your NFT becomes your connection to the Bank of Spanky membership ecosystem.</p>
+                    <p class="step-desc">Your NFT becomes your connection to the Bank of Spanky membership ecosystem.
+                    </p>
                 </div>
                 <div class="step-item">
                     <div class="step-num">Build</div>
                     <div class="step-title">Shape the Future</div>
-                    <p class="step-desc">Participate in campaigns, community activities, future drops, merch initiatives, collaborations, and ecosystem opportunities.</p>
+                    <p class="step-desc">Participate in campaigns, community activities, future drops, merch
+                        initiatives, collaborations, and ecosystem opportunities.</p>
                 </div>
             </div>
             <div class="wp-body" style="margin-top:48px;">
@@ -780,8 +958,10 @@
                     <div class="section-eyebrow">The Mindset</div>
                     <h2>The Bank Member Mindset</h2>
                     <div class="wp-body">
-                        <p>A Bank of Spanky member isn't simply someone holding an NFT. It's someone who shows up, creates something, and contributes to the network.</p>
-                        <p>The belief is simple: internet attention can become something bigger when a community actually builds together.</p>
+                        <p>A Bank of Spanky member isn't simply someone holding an NFT. It's someone who shows up,
+                            creates something, and contributes to the network.</p>
+                        <p>The belief is simple: internet attention can become something bigger when a community
+                            actually builds together.</p>
                     </div>
                 </div>
                 <div>
@@ -842,16 +1022,24 @@
     <!-- CLOSING -->
     <section class="wp-closing">
         <div class="wrap">
-            <p style="font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:24px;">In Summary</p>
+            <p
+                style="font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:24px;">
+                In Summary</p>
             <h2>Hold the NFT.<br>Own the Culture.<br>Help Build the Bank.</h2>
-            <p class="closing-copy">No suits. No fake promises. No corporate nonsense. Just Spanky and a community that builds together.</p>
+            <p class="closing-copy">No suits. No fake promises. No corporate nonsense. Just Spanky and a community that
+                builds together.</p>
             <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-                <a href="https://ogspanky.com" target="_blank" rel="noopener" class="btn btn-primary">Visit the Store</a>
+                <a href="https://ogspanky.com" target="_blank" rel="noopener" class="btn btn-primary">Visit the
+                    Store</a>
                 <a href="community.html" class="btn btn-secondary">Join the Community</a>
             </div>
             <div class="wp-disclaimer">
                 <strong style="color:var(--ink-soft);">Disclaimer</strong><br>
-                This document is for informational purposes only and does not constitute financial, investment, legal, or tax advice. NFTs and associated tokens carry significant financial risk. Values can go to zero. Allocations and roadmap items represent the current strategic framework and may evolve as the ecosystem develops. Never invest more than you can afford to lose. Always verify official links through bankofspanky.com only.
+                This document is for informational purposes only and does not constitute financial, investment, legal,
+                or tax advice. NFTs and associated tokens carry significant financial risk. Values can go to zero.
+                Allocations and roadmap items represent the current strategic framework and may evolve as the ecosystem
+                develops. Never invest more than you can afford to lose. Always verify official links through
+                bankofspanky.com only.
             </div>
         </div>
     </section>
@@ -860,7 +1048,8 @@
     <footer>
         <div class="wrap">
             <div class="brand">
-                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;justify-content:center;">
+                    <img src="logo.png" alt="Bank of Spanky logo">
                     Bank of Spanky
                 </a>
             </div>
@@ -872,7 +1061,8 @@
                 <a href="community.html">Community</a>
                 <a href="https://ogspanky.com" target="_blank" rel="noopener">Store</a>
             </div>
-            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.</p>
+            <p class="notice">© Bank of Spanky. All rights reserved. Verify all links only through official channels.
+            </p>
         </div>
     </footer>
 
@@ -891,4 +1081,5 @@
     </script>
 
 </body>
+
 </html>
